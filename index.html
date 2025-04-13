@@ -1,0 +1,334 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathschool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ff69b4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+        }
+        .header nav a {
+            margin: 0 8px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .header button {
+            background-color: #ffff00;
+            color: #000000;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+        }
+        .hero {
+            text-align: center;
+            padding: 48px 16px;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .hero button {
+            background-color: #ffff00;
+            color: #000000;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+        .hero .dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        .hero .dots div {
+            width: 12px;
+            height: 12px;
+            background-color: #ffffff;
+            border-radius: 50%;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            padding: 16px;
+        }
+        @media (min-width: 768px) {
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .features {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .feature {
+            padding: 16px;
+            border-radius: 8px;
+        }
+        .feature.pink {
+            background-color: #ff69b4;
+        }
+        .feature.yellow {
+            background-color: #ffff00;
+        }
+        .feature.blue {
+            background-color: #0000ff;
+        }
+        .feature.white {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .form-section {
+            background-color: #0000ff;
+            color: #ffffff;
+            padding: 32px;
+            border-radius: 8px;
+            margin: 16px;
+        }
+        .form-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+        .form-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .form-section input {
+            padding: 8px;
+            border-radius: 4px;
+            border: none;
+        }
+        .form-section button {
+            background-color: #ffff00;
+            color: #000000;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+        }
+        .courses {
+            padding: 16px;
+        }
+        .courses h2 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+        .courses .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .courses .buttons button {
+            background-color: #4a4a4a;
+            color: #ffffff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+        }
+        .courses .course-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        @media (min-width: 768px) {
+            .courses .course-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .course {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 16px;
+            border-radius: 8px;
+        }
+        .course h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+        .course ul {
+            list-style-type: disc;
+            padding-left: 16px;
+        }
+        .course .price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+        }
+        .course .price button {
+            background-color: #ffff00;
+            color: #000000;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+        }
+        .lessons {
+            padding: 16px;
+        }
+        .lessons h2 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+        .lessons .lesson-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        @media (min-width: 768px) {
+            .lessons .lesson-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .lesson {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 16px;
+            border-radius: 8px;
+        }
+        .lesson h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+        .lesson button {
+            background-color: #ffff00;
+            color: #000000;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="text-2xl font-bold">Mathschool</div>
+            <nav class="hidden md:flex space-x-4">
+                <a href="#" class="hover:underline">Главная</a>
+                <a href="#" class="hover:underline">Курсы</a>
+                <a href="#" class="hover:underline">Отзывы</a>
+                <a href="#" class="hover:underline">Контакты</a>
+            </nav>
+            <button>Купить курс</button>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Онлайн школа огэ/егэ по математике</h1>
+            <button>Купить курс</button>
+            <div class="dots">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="feature pink">
+                <h2 class="font-bold">Сильные преподаватели</h2>
+                <p>Описание преимущества</p>
+            </div>
+            <div class="feature yellow">
+                <h2 class="font-bold">Проверенная система знаний</h2>
+                <p>Описание преимущества</p>
+            </div>
+            <div class="feature pink">
+                <h2 class="font-bold">Групповой формат занятий</h2>
+                <p>Описание преимущества</p>
+            </div>
+            <div class="feature white">
+                <h2 class="font-bold">Постоянная связь</h2>
+                <p>Описание преимущества</p>
+            </div>
+            <div class="feature blue">
+                <h2 class="font-bold">Ученики</h2>
+                <p>Описание преимущества</p>
+            </div>
+            <div class="feature pink">
+                <h2 class="font-bold">Учись в Mathschool и выиграй</h2>
+                <p>10 000 РУБЛЕЙ</p>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section class="form-section">
+            <h2>Начни готовиться к экзаменам вместе с Mathschool</h2>
+            <form>
+                <input type="text" placeholder="Имя">
+                <input type="email" placeholder="Email">
+                <input type="tel" placeholder="Телефон">
+                <button>Отправить</button>
+            </form>
+        </section>
+
+        <!-- Courses Section -->
+        <section class="courses">
+            <h2>Выбери подходящий курс</h2>
+            <div class="buttons">
+                <button>ОГЭ</button>
+                <button>ЕГЭ</button>
+            </div>
+            <div class="course-list">
+                <div class="course">
+                    <h3>ЕГЭ Базовый</h3>
+                    <ul>
+                        <li>Курс для сдачи экзамена</li>
+                        <li>Подготовка к ЕГЭ</li>
+                    </ul>
+                    <div class="price">
+                        <span>4 500 Р/мес</span>
+                        <button>Купить</button>
+                    </div>
+                </div>
+                <div class="course">
+                    <h3>ЕГЭ Профиль 1 часть</h3>
+                    <ul>
+                        <li>Курс для сдачи экзамена</li>
+                        <li>Подготовка к ЕГЭ</li>
+                    </ul>
+                    <div class="price">
+                        <span>4 500 Р/мес</span>
+                        <button>Купить</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lessons Section -->
+        <section class="lessons">
+            <h2>Уроки в записи</h2>
+            <div class="lesson-list">
+                <div class="lesson">
+                    <h3>Планиметрия</h3>
+                    <p>999 Р</p>
+                    <button>Купить</button>
+                </div>
+                <div class="lesson">
+                    <h3>Стереометрия</h3>
+                    <p>999 Р</p>
+                    <button>Купить</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
