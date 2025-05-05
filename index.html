@@ -1,596 +1,134 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Hikmah's</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio Hikmah Bachtiarima Dewi - 3D Render, Photography, UI Design" />
+  <title>Hikmah's Portfolio</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
 
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #000000;
-            margin: 0;	
-        }
-        .container {
-            max-width: 1920px;
-            margin: 0 auto;
-            background-color: #000000;
-            color: #ffffff;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 36px;
-        }
-        .header nav a {
-            margin: 0 8px;
-            text-decoration: none;
-            color: #ffffff;
-        }
-        .header button {
-            background-color: #ffff00;
-            color: #000000;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-        }
-        .hero {
-            text-align: center;
-            padding: 48px 16px;
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-        }
-        .hero button {
-            background-color: #ffff00;
-            color: #000000;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 4px;
-            margin-bottom: 16px;
-        }
-        .hero .dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-        }
-        .hero .dots div {
-            width: 12px;
-            height: 12px;
-            background-color: #ffffff;
-            border-radius: 50%;
-        }
-        
-        .form-section {
-            background-color: #ADD8E6;
-            color: #ffffff;
-            padding: 32px;
-            border-radius: 8px;
-            margin: 16px;
-        }
-        .form-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-        }
-        .form-section form {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        .form-section input {
-            padding: 8px;
-            border-radius: 4px;
-            border: none;
-        }
-        .form-section button {
-            background-color: #ffff00;
-            color: #000000;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-        }
-        .courses {
-            padding: 16px;
-        }
-        .courses h2 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-        }
-        .courses .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 16px;
-        }
-        .courses .buttons button {
-            background-color: #4a4a4a;
-            color: #ffffff;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-        }
-        .courses .course-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-        }
-        @media (min-width: 768px) {
-            .courses .course-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        .course {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 16px;
-            border-radius: 8px;
-        }
-        .course h3 {
-            font-size: 1.25rem;
-            margin-bottom: 8px;
-        }
-        .course ul {
-            list-style-type: disc;
-            padding-left: 16px;
-        }
-        .course .price {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 16px;
-        }
-        .course .price button {
-            background-color: #ffff00;
-            color: #000000;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-        }
-        .lessons {
-            padding: 16px;
-        }
-        .lessons h2 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-        }
-        .lessons .lesson-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-        }
-        @media (min-width: 768px) {
-            .lessons .lesson-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        .lesson {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 16px;
-            border-radius: 8px;
-        }
-        .lesson h3 {
-            font-size: 1.25rem;
-            margin-bottom: 8px;
-        }
-        .lesson button {
-            background-color: #ffff00;
-            color: #000000;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-        }
-		
-		.landings {
-            padding: 16px;
-        }
-        .landings h2 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-        }
-        .landings .landing-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-        }
-        @media (min-width: 768px) {
-            .landings .landing-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        .landing {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 16px;
-            border-radius: 8px;
-        }
-        .landing h3 {
-            font-size: 1.25rem;
-            margin-bottom: 8px;
-        }
-        .landing button {
-            background-color: #ffff00;
-            color: #000000;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-        }
-		
-		.photo-grid {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 8px;
-			margin-top: 16px;
-		}
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
 
-		.photo-grid img {
-			width: 100%;
-			height: 120px;
-			border-radius: 8px;
-			object-fit: cover;
-		}
-		
-		.ui-grid {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			gap: 8px;
-			margin-top: 16px;
-		}
-		
-		.ui-grid img {
-			width: 100%;
-			height: 120px;
-			border-radius: 8px;
-			object-fit: cover;
-		}
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+    }
 
-		.notepad {
-		  background: white;
-		  border-radius: 10px;
-		  padding: 1rem;
-		  width: 1457px;
-		  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-		  position: relative;
-		  margin: 15px;
-		}
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
 
-		.holes {
-		  display: flex;
-		  justify-content: space-between;
-		  padding: 0 1rem;
-		  margin-bottom: 1rem;
-		}
+    .notepad {
+      padding: 2em;
+    }
 
-		.holes span {
-		  width: 14px;
-		  height: 14px;
-		  background: black;
-		  border-radius: 50%;
-		  display: inline-block;
-		}
+    h1, h2 {
+      text-align: center;
+    }
 
-		.features {
-		  display: grid;
-		  grid-template-columns: repeat(4, 1fr);
-		  gap: 1rem;
-		  flex-wrap: wrap;
-		}
+    .photo-grid, .ui-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1em;
+      padding: 1em;
+    }
 
-		.card {
-		  padding: 1rem;
-		  border-radius: 12px;
-		  color: #000;
-		  font-weight: bold;
-		  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-		  min-height: 100px;
-		  display: flex;
-		  align-items: center;
-		  justify-content: center;
-		  text-align: center;
-		}
+    .photo-grid img, .ui-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
 
-		.pink {
-		  background-color: #FF69B4;
-		  color: white;
-		}
-
-		.yellow {
-		  background-color: #FFFF66;
-		}
-
-		.white {
-		  background-color: #ffffff;
-		}
-
-		.blue {
-		  background-color: #ADD8E6;
-		}
-
-		.big {
-		  grid-column: span 2;
-		  font-size: 1.2rem;
-		  position: relative;
-		}
-
-		.price {
-		  display: block;
-		  margin-top: 1rem;
-		  font-size: 1.5rem;
-		  color: #fff;
-		  background: #ff1493;
-		  padding: 0.5rem 1rem;
-		  border-radius: 20px;
-		  position: relative;
-		}
-
-		.icon {
-		  font-size: 1.5rem;
-		  margin-top: 0.5rem;
-		}
-
-		.bottom-heart {
-		  position: absolute;
-		  bottom: 10px;
-		  right: 10px;
-		  font-size: 1.5rem;
-		}
-		.photo-grid1 {			
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 8px;
-			margin-top: 16px;
-		}
-    </style>
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      margin-top: 2em;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="text-2xl font-bold">Hikmah's Portfolio</div>
-            <nav class="hidden md:flex space-x-4">
-                <a href="#hero" class="hover:underline">Home</a>
-                <a href="#about" class="hover:underline">About</a>
-                <a href="#project" class="hover:underline">Project</a>
-                <a href="#contact" class="hover:underline">Contact</a>
-            </nav>
-        </header>
+  <header>
+    <h1>Hikmah Bachtiarima Dewi</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#3d">3D Render</a></li>
+        <li><a href="#photography">Photography</a></li>
+        <li><a href="#ui">UI Design</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <!-- Hero Section -->
-        <section class="hero" id="hero">
-            <h1>PORTFOLIO🎨</h1>
-            <button>Start</button>
-            <div class="dots">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </section>
+  <section class="notepad" id="about">
+    <h2>About Me</h2>
+    <p>I'm a final-year Multimedia student specializing in 3D modeling, UI/UX design, and photography. I love combining technical skills with visual storytelling.</p>
+  </section>
 
-        <!-- Features Section -->
-        <section class="notepad" id="about" id="contact">
-		<div class="holes">
-		  <!-- 13 black circles -->
-		  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-		  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-		</div>
-
-		<div class="features">
-		  <div class="card pink">
-			<a href="CV.pdf" target="_blank" style="color: white; text-decoration: none;">
-			CV
-			</a>
-			  <div class="icon">🌈</div>
-		  </div>
-		  <div class="card white">
-			<p>About Me</p>
-			<p>Hello, my name is Hikmah Bachtiarima Dewi. I'm currently a 4th student majoring in multimedia.</p>
-		  </div>
-		  <div class="card yellow">
-			<p>Education </p>
-			<p>Education University of Indonesian </p>
-			<div class="icon">🌸</div>
-		  </div>
-		  <div class="card white">
-			<p><strong>Skill </strong></p>
-			<blockquote>
-			  <p>AI, After Effects, Photoshop, Blender</p>
-			</blockquote>
-		  </div>
-
-		  <div class="card white">
-			<p>Experience</p>
-			<p>Publication and Documentation</p>
-		  </div>
-		  <div class="card blue">
-			<p>Certification </p>
-			<blockquote>
-			  <p>Animator Muda</p>
-			</blockquote>
-			<div class="icon">⭐️</div>
-				  </div>
-				  <div class="card pink big">
-					hbachtiarimadewi@gmail.com<br>
-					<span class="price">CONTACT!</span>
-					<div class="icon bottom-heart">💛</div>
-				  </div>
-				</div>
-		</section>
-
-      <!-- Courses Section -->
-        <section class="courses" id="project">
-	<button>Project</button>
-            <h2>3D Render🏢</h2>
-            <div class="buttons">
-            </div>
-            <div class="course-list">
-                <div class="course">
-                    <h3>IoT</h3>
-                    <div class="photo-grid">
-			    <a href="[HOME AUTOMATION].png" data-lightbox="iot">
-       				  <img src="[HOME AUTOMATION].png" alt="Photo 1">
-			    </a>
-			    <a href="[SMART WATERING].png" data-lightbox="iot">
-       				  <img src="[SMART WATERING].png" alt="Photo 2">
-			    </a>
-			    <a href="ROAD MONITORING 1.png" data-lightbox="iot">
-       				  <img src="ROAD MONITORING 1.png" alt="Photo 3">
-			    </a>
-			    <a href="ROAD MONITORING 2.png" data-lightbox="iot">
-       				  <img src="ROAD MONITORING 2.png" alt="Photo 4">
-			    </a>
-			    <a href="SENSOR BANJIR 2.png" data-lightbox="iot">
-       				  <img src="SENSOR BANJIR 2.png" alt="Photo 5">
-			    </a>
-			    <a href="SENSOR BANJIR 3.png" data-lightbox="iot">
-       				  <img src="SENSOR BANJIR 3.png" alt="Photo 6">
-			    </a>
-    				</div>
-                </div>
-                <div class="course">
-                    <h3>Hotel</h3>
-				  <div class="photo-grid">
-				<a href="APARTEMEN (ENVIRONMENT 1).png" data-lightbox="hotel">
-			  	    <img src="APARTEMEN (ENVIRONMENT 1).png" alt="Render 1">
-				</a>
-				<a href="APARTEMEN (ENVIRONMENT 2).png" data-lightbox="hotel">
-   				    <img src="APARTEMEN (ENVIRONMENT 2).png" alt="Render 2">
-				</a>
-				<a href="APARTEMEN 1 (LOBBY).png" data-lightbox="hotel">  
-   				    <img src="APARTEMEN 1 (LOBBY).png" alt="Render 3">
-				</a>
-				<a href="APARTEMEN 3 (LOBBY).png" data-lightbox="hotel">
-   				    <img src="APARTEMEN 3 (LOBBY).png" alt="Render 4">
-				</a>
-				<a href="APARTEMEN 4 (LOBBY).png" data-lightbox="hotel">
-   				    <img src="APARTEMEN 4 (LOBBY).png" alt="Render 5">
-				</a>
-				<a href="APARTEMEN 6 (LOBBY).png" data-lightbox="hotel">
-					<img src="APARTEMEN 6 (LOBBY).png" alt="Render 6">
-				</a>
-				  </div>
-                </div>
-            </div>
-        </section>
-	  
-	  
-		<!-- Lessons Section -->
-        <section class="lessons">
-            <h2>Photography📸</h2>
-          <div class="lesson-list">
-				
-            <div class="lesson">
-                    <h3>Nature</h3>
-			<div class="photo-grid">
-				<a href="DSC_0039.JPG" data-lightbox="nature">
-       				  <img src="DSC_0039.JPG" alt="Photo 1">
-				</a>
-				<a href="DSC_0106.JPG" data-lightbox="nature">
-       				  <img src="DSC_0106.JPG" alt="Photo 2">
-				</a>
-				<a href="DSC_0002.JPG" data-lightbox="nature">
-       				  <img src="DSC_0002.JPG" alt="Photo 3">
-				</a>
-				<a href="DSC_0028.JPG" data-lightbox="nature">
-       				  <img src="DSC_0028.JPG" alt="Photo 4">
-				</a>
-				<a href="DSC_0016.JPG" data-lightbox="nature">
-       				  <img src="DSC_0016.JPG" alt="Photo 5">
-				</a>
-				<a href="DSC_0075.JPG" data-lightbox="nature">
-       				  <img src="DSC_0075.JPG" alt="Photo 6">
-				</a>
-					</div>
-                    
-            </div>
-				
-            <div class="lesson">
-                    <h3>Human Interest</h3>
-					<div class="photo-grid">
-				<a href="DSC_0480.JPG" data-lightbox="hotel">
-					<img src="DSC_0480.JPG" alt="Photo 1"/>
-				</a>
-				<a href="DSC_0466.JPG" data-lightbox="hotel">
-        				<img src="DSC_0466.JPG" alt="Photo 2"/>
-				</a>
-				<a href="DSC_0550.JPG" data-lightbox="hotel">
-        				<img src="DSC_0550.JPG"  alt="Photo 3"/>
-				</a>
-				<a href="DSC_0578.JPG" data-lightbox="hotel">
-        				<img src="DSC_0578.JPG" alt="Photo 4"/>
-				</a>
-				<a href="DSC_0642.JPG" data-lightbox="hotel">
-        				<img src="DSC_0642.JPG" alt="Photo 5"/>
-				</a>
-				<a href="DSC_0645.JPG" data-lightbox="hotel">
-        				<img src="DSC_0645.JPG" alt="Photo 6"/>
-				</a>
-    				</div>
-            </div>
-            </div>
-        </section>
-		
-		<!-- Landing Section -->
-        <section class="landings">
-            <h2>Design</h2>
-          <div class="landing-list">
-            <div class="landing">
-                    <h3>UI</h3>
-			<div class="ui-grid">
-				<a href="Geolearn UI.png" data-lightbox="ui">
-       				  <img src="Geolearn UI.png" alt="Photo 1">
-				</a>
-				<a href="Geolearn.png" data-lightbox="ui">
-       				  <img src="Geolearn.png" alt="Photo 2">
-				</a>
-				<a href="HydroEdu UI.jpg" data-lightbox="ui">
-       				  <img src="HydroEdu UI.jpg" alt="Photo 3">
-				</a>
-				<a href="HydroEdu.jpg" data-lightbox="ui">
-       				  <img src="HydroEdu.jpg" alt="Photo 4">
-				</a>
-					</div>
-            </div>
-				
-            <div class="landing">
-                    <h3>Branding</h3>
-				<div class="photo-grid">
-					<a href="Banner.png" data-lightbox="brand">
-					<img src="Banner.png" alt="Photo 1"/>
-					</a>
-					<a href="Flyer.png" data-lightbox="brand">
-        				<img src="Flyer.png" alt="Photo 2"/>
-					</a>
-					<a href="Spanduk.png" data-lightbox="brand">
-        				<img src="Spanduk.png"  alt="Photo 3"/>
-					</a>
-					<a href="Nametag.png" data-lightbox="brand">
-        				<img src="Nametag.png" alt="Photo 4"/>
-					</a>
-					<a href="Mockup.png" data-lightbox="brand">
-        				<img src="Mockup.png" alt="Photo 5"/>
-					</a>
-					<a href="Produk.png" data-lightbox="brand">
-        				<img src="Produk.png" alt="Photo 6"/>
-					</a>
-    				</div>
-            </div>
-            </div>
-        </section>
-		
-		<!-- Form Section -->
-        <footer class="form-section">
-            <h2>Get in Touch👋</h2>
-            <form>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="tel" placeholder="Comment">
-                <button>Send</button>
-            </form>
-        </footer>
+  <section class="notepad" id="3d">
+    <h2>3D Render</h2>
+    <div class="photo-grid">
+      <a href="apartemen-environment-1.png" data-lightbox="3d" data-title="Apartemen Environment 1">
+        <img src="apartemen-environment-1.png" alt="3D Render of Apartment Environment">
+      </a>
+      <a href="apartemen-environment-2.png" data-lightbox="3d" data-title="Apartemen Environment 2">
+        <img src="apartemen-environment-2.png" alt="3D Render of Apartment Interior">
+      </a>
     </div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  </section>
+
+  <section class="notepad" id="photography">
+    <h2>Photography</h2>
+    <div class="photo-grid">
+      <a href="DSC_0039.JPG" data-lightbox="photography" data-title="Nature Scene">
+        <img src="DSC_0039.JPG" alt="Nature Landscape with Trees">
+      </a>
+      <a href="DSC_0082.JPG" data-lightbox="photography" data-title="Urban Scene">
+        <img src="DSC_0082.JPG" alt="City Street with People">
+      </a>
+    </div>
+  </section>
+
+  <section class="notepad" id="ui">
+    <h2>UI Design</h2>
+    <div class="ui-grid">
+      <img src="ui-1.jpg" alt="UI Design Mockup 1">
+      <img src="ui-2.jpg" alt="UI Design Mockup 2">
+    </div>
+  </section>
+
+  <section class="notepad" id="contact">
+    <h2>Contact</h2>
+    <p>Get in touch via email: hikmah@example.com</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Hikmah Bachtiarima Dewi. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </body>
+
 </html>
