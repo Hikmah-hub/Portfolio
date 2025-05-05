@@ -1,96 +1,596 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio Hikmah Bachtiarima Dewi - 3D renders, UI design, photography and multimedia projects." />
-  <title>Hikmah Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Hikmah's</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            margin: 0;	
+        }
+        .container {
+            max-width: 1920px;
+            margin: 0 auto;
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 36px;
+        }
+        .header nav a {
+            margin: 0 8px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .header button {
+            background-color: #ffff00;
+            color: #000000;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+        }
+        .hero {
+            text-align: center;
+            padding: 48px 16px;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .hero button {
+            background-color: #ffff00;
+            color: #000000;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+        .hero .dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        .hero .dots div {
+            width: 12px;
+            height: 12px;
+            background-color: #ffffff;
+            border-radius: 50%;
+        }
+        
+        .form-section {
+            background-color: #ADD8E6;
+            color: #ffffff;
+            padding: 32px;
+            border-radius: 8px;
+            margin: 16px;
+        }
+        .form-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+        .form-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .form-section input {
+            padding: 8px;
+            border-radius: 4px;
+            border: none;
+        }
+        .form-section button {
+            background-color: #ffff00;
+            color: #000000;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+        }
+        .courses {
+            padding: 16px;
+        }
+        .courses h2 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+        .courses .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .courses .buttons button {
+            background-color: #4a4a4a;
+            color: #ffffff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+        }
+        .courses .course-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        @media (min-width: 768px) {
+            .courses .course-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .course {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 16px;
+            border-radius: 8px;
+        }
+        .course h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+        .course ul {
+            list-style-type: disc;
+            padding-left: 16px;
+        }
+        .course .price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+        }
+        .course .price button {
+            background-color: #ffff00;
+            color: #000000;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+        }
+        .lessons {
+            padding: 16px;
+        }
+        .lessons h2 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+        .lessons .lesson-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        @media (min-width: 768px) {
+            .lessons .lesson-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .lesson {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 16px;
+            border-radius: 8px;
+        }
+        .lesson h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+        .lesson button {
+            background-color: #ffff00;
+            color: #000000;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+        }
+		
+		.landings {
+            padding: 16px;
+        }
+        .landings h2 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+        .landings .landing-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        @media (min-width: 768px) {
+            .landings .landing-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .landing {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 16px;
+            border-radius: 8px;
+        }
+        .landing h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+        .landing button {
+            background-color: #ffff00;
+            color: #000000;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+        }
+		
+		.photo-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 8px;
+			margin-top: 16px;
+		}
+
+		.photo-grid img {
+			width: 100%;
+			height: 120px;
+			border-radius: 8px;
+			object-fit: cover;
+		}
+		
+		.ui-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 8px;
+			margin-top: 16px;
+		}
+		
+		.ui-grid img {
+			width: 100%;
+			height: 120px;
+			border-radius: 8px;
+			object-fit: cover;
+		}
+
+		.notepad {
+		  background: white;
+		  border-radius: 10px;
+		  padding: 1rem;
+		  width: 1457px;
+		  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+		  position: relative;
+		  margin: 15px;
+		}
+
+		.holes {
+		  display: flex;
+		  justify-content: space-between;
+		  padding: 0 1rem;
+		  margin-bottom: 1rem;
+		}
+
+		.holes span {
+		  width: 14px;
+		  height: 14px;
+		  background: black;
+		  border-radius: 50%;
+		  display: inline-block;
+		}
+
+		.features {
+		  display: grid;
+		  grid-template-columns: repeat(4, 1fr);
+		  gap: 1rem;
+		  flex-wrap: wrap;
+		}
+
+		.card {
+		  padding: 1rem;
+		  border-radius: 12px;
+		  color: #000;
+		  font-weight: bold;
+		  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+		  min-height: 100px;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  text-align: center;
+		}
+
+		.pink {
+		  background-color: #FF69B4;
+		  color: white;
+		}
+
+		.yellow {
+		  background-color: #FFFF66;
+		}
+
+		.white {
+		  background-color: #ffffff;
+		}
+
+		.blue {
+		  background-color: #ADD8E6;
+		}
+
+		.big {
+		  grid-column: span 2;
+		  font-size: 1.2rem;
+		  position: relative;
+		}
+
+		.price {
+		  display: block;
+		  margin-top: 1rem;
+		  font-size: 1.5rem;
+		  color: #fff;
+		  background: #ff1493;
+		  padding: 0.5rem 1rem;
+		  border-radius: 20px;
+		  position: relative;
+		}
+
+		.icon {
+		  font-size: 1.5rem;
+		  margin-top: 0.5rem;
+		}
+
+		.bottom-heart {
+		  position: absolute;
+		  bottom: 10px;
+		  right: 10px;
+		  font-size: 1.5rem;
+		}
+		.photo-grid1 {			
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 8px;
+			margin-top: 16px;
+		}
+    </style>
 </head>
-<body class="bg-white text-gray-800">
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="text-2xl font-bold">Hikmah's Portfolio</div>
+            <nav class="hidden md:flex space-x-4">
+                <a href="#hero" class="hover:underline">Home</a>
+                <a href="#about" class="hover:underline">About</a>
+                <a href="#project" class="hover:underline">Project</a>
+                <a href="#contact" class="hover:underline">Contact</a>
+            </nav>
+        </header>
 
-  <!-- Header -->
-  <header class="bg-gray-100 py-6 shadow">
-    <div class="container mx-auto text-center">
-      <h1 class="text-3xl font-bold">Hikmah Bachtiarima Dewi</h1>
-      <p class="text-gray-600 mt-1">Multimedia | Design | UI</p>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <h1>PORTFOLIO🎨</h1>
+            <button>Start</button>
+            <div class="dots">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="notepad" id="about" id="contact">
+		<div class="holes">
+		  <!-- 13 black circles -->
+		  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+		  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+		</div>
+
+		<div class="features">
+		  <div class="card pink">
+			<a href="CV.pdf" target="_blank" style="color: white; text-decoration: none;">
+			CV
+			</a>
+			  <div class="icon">🌈</div>
+		  </div>
+		  <div class="card white">
+			<p>About Me</p>
+			<p>Hello, my name is Hikmah Bachtiarima Dewi. I'm currently a 4th student majoring in multimedia.</p>
+		  </div>
+		  <div class="card yellow">
+			<p>Education </p>
+			<p>Education University of Indonesian </p>
+			<div class="icon">🌸</div>
+		  </div>
+		  <div class="card white">
+			<p><strong>Skill </strong></p>
+			<blockquote>
+			  <p>AI, After Effects, Photoshop, Blender</p>
+			</blockquote>
+		  </div>
+
+		  <div class="card white">
+			<p>Experience</p>
+			<p>Publication and Documentation</p>
+		  </div>
+		  <div class="card blue">
+			<p>Certification </p>
+			<blockquote>
+			  <p>Animator Muda</p>
+			</blockquote>
+			<div class="icon">⭐️</div>
+				  </div>
+				  <div class="card pink big">
+					hbachtiarimadewi@gmail.com<br>
+					<span class="price">CONTACT!</span>
+					<div class="icon bottom-heart">💛</div>
+				  </div>
+				</div>
+		</section>
+
+      <!-- Courses Section -->
+        <section class="courses" id="project">
+	<button>Project</button>
+            <h2>3D Render🏢</h2>
+            <div class="buttons">
+            </div>
+            <div class="course-list">
+                <div class="course">
+                    <h3>IoT</h3>
+                    <div class="photo-grid">
+			    <a href="[HOME AUTOMATION].png" data-lightbox="iot">
+       				  <img src="[HOME AUTOMATION].png" alt="Photo 1">
+			    </a>
+			    <a href="[SMART WATERING].png" data-lightbox="iot">
+       				  <img src="[SMART WATERING].png" alt="Photo 2">
+			    </a>
+			    <a href="ROAD MONITORING 1.png" data-lightbox="iot">
+       				  <img src="ROAD MONITORING 1.png" alt="Photo 3">
+			    </a>
+			    <a href="ROAD MONITORING 2.png" data-lightbox="iot">
+       				  <img src="ROAD MONITORING 2.png" alt="Photo 4">
+			    </a>
+			    <a href="SENSOR BANJIR 2.png" data-lightbox="iot">
+       				  <img src="SENSOR BANJIR 2.png" alt="Photo 5">
+			    </a>
+			    <a href="SENSOR BANJIR 3.png" data-lightbox="iot">
+       				  <img src="SENSOR BANJIR 3.png" alt="Photo 6">
+			    </a>
+    				</div>
+                </div>
+                <div class="course">
+                    <h3>Hotel</h3>
+				  <div class="photo-grid">
+				<a href="APARTEMEN (ENVIRONMENT 1).png" data-lightbox="hotel">
+			  	    <img src="APARTEMEN (ENVIRONMENT 1).png" alt="Render 1">
+				</a>
+				<a href="APARTEMEN (ENVIRONMENT 2).png" data-lightbox="hotel">
+   				    <img src="APARTEMEN (ENVIRONMENT 2).png" alt="Render 2">
+				</a>
+				<a href="APARTEMEN 1 (LOBBY).png" data-lightbox="hotel">  
+   				    <img src="APARTEMEN 1 (LOBBY).png" alt="Render 3">
+				</a>
+				<a href="APARTEMEN 3 (LOBBY).png" data-lightbox="hotel">
+   				    <img src="APARTEMEN 3 (LOBBY).png" alt="Render 4">
+				</a>
+				<a href="APARTEMEN 4 (LOBBY).png" data-lightbox="hotel">
+   				    <img src="APARTEMEN 4 (LOBBY).png" alt="Render 5">
+				</a>
+				<a href="APARTEMEN 6 (LOBBY).png" data-lightbox="hotel">
+					<img src="APARTEMEN 6 (LOBBY).png" alt="Render 6">
+				</a>
+				  </div>
+                </div>
+            </div>
+        </section>
+	  
+	  
+		<!-- Lessons Section -->
+        <section class="lessons">
+            <h2>Photography📸</h2>
+          <div class="lesson-list">
+				
+            <div class="lesson">
+                    <h3>Nature</h3>
+			<div class="photo-grid">
+				<a href="DSC_0039.JPG" data-lightbox="nature">
+       				  <img src="DSC_0039.JPG" alt="Photo 1">
+				</a>
+				<a href="DSC_0106.JPG" data-lightbox="nature">
+       				  <img src="DSC_0106.JPG" alt="Photo 2">
+				</a>
+				<a href="DSC_0002.JPG" data-lightbox="nature">
+       				  <img src="DSC_0002.JPG" alt="Photo 3">
+				</a>
+				<a href="DSC_0028.JPG" data-lightbox="nature">
+       				  <img src="DSC_0028.JPG" alt="Photo 4">
+				</a>
+				<a href="DSC_0016.JPG" data-lightbox="nature">
+       				  <img src="DSC_0016.JPG" alt="Photo 5">
+				</a>
+				<a href="DSC_0075.JPG" data-lightbox="nature">
+       				  <img src="DSC_0075.JPG" alt="Photo 6">
+				</a>
+					</div>
+                    
+            </div>
+				
+            <div class="lesson">
+                    <h3>Human Interest</h3>
+					<div class="photo-grid">
+				<a href="DSC_0480.JPG" data-lightbox="hotel">
+					<img src="DSC_0480.JPG" alt="Photo 1"/>
+				</a>
+				<a href="DSC_0466.JPG" data-lightbox="hotel">
+        				<img src="DSC_0466.JPG" alt="Photo 2"/>
+				</a>
+				<a href="DSC_0550.JPG" data-lightbox="hotel">
+        				<img src="DSC_0550.JPG"  alt="Photo 3"/>
+				</a>
+				<a href="DSC_0578.JPG" data-lightbox="hotel">
+        				<img src="DSC_0578.JPG" alt="Photo 4"/>
+				</a>
+				<a href="DSC_0642.JPG" data-lightbox="hotel">
+        				<img src="DSC_0642.JPG" alt="Photo 5"/>
+				</a>
+				<a href="DSC_0645.JPG" data-lightbox="hotel">
+        				<img src="DSC_0645.JPG" alt="Photo 6"/>
+				</a>
+    				</div>
+            </div>
+            </div>
+        </section>
+		
+		<!-- Landing Section -->
+        <section class="landings">
+            <h2>Design</h2>
+          <div class="landing-list">
+            <div class="landing">
+                    <h3>UI</h3>
+			<div class="ui-grid">
+				<a href="Geolearn UI.png" data-lightbox="ui">
+       				  <img src="Geolearn UI.png" alt="Photo 1">
+				</a>
+				<a href="Geolearn.png" data-lightbox="ui">
+       				  <img src="Geolearn.png" alt="Photo 2">
+				</a>
+				<a href="HydroEdu UI.jpg" data-lightbox="ui">
+       				  <img src="HydroEdu UI.jpg" alt="Photo 3">
+				</a>
+				<a href="HydroEdu.jpg" data-lightbox="ui">
+       				  <img src="HydroEdu.jpg" alt="Photo 4">
+				</a>
+					</div>
+            </div>
+				
+            <div class="landing">
+                    <h3>Branding</h3>
+				<div class="photo-grid">
+					<a href="Banner.png" data-lightbox="brand">
+					<img src="Banner.png" alt="Photo 1"/>
+					</a>
+					<a href="Flyer.png" data-lightbox="brand">
+        				<img src="Flyer.png" alt="Photo 2"/>
+					</a>
+					<a href="Spanduk.png" data-lightbox="brand">
+        				<img src="Spanduk.png"  alt="Photo 3"/>
+					</a>
+					<a href="Nametag.png" data-lightbox="brand">
+        				<img src="Nametag.png" alt="Photo 4"/>
+					</a>
+					<a href="Mockup.png" data-lightbox="brand">
+        				<img src="Mockup.png" alt="Photo 5"/>
+					</a>
+					<a href="Produk.png" data-lightbox="brand">
+        				<img src="Produk.png" alt="Photo 6"/>
+					</a>
+    				</div>
+            </div>
+            </div>
+        </section>
+		
+		<!-- Form Section -->
+        <footer class="form-section">
+            <h2>Get in Touch👋</h2>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="tel" placeholder="Comment">
+                <button>Send</button>
+            </form>
+        </footer>
     </div>
-  </header>
-
-  <!-- Navigation -->
-  <nav class="hidden md:flex justify-center space-x-6 py-4 bg-white shadow-md">
-    <a href="#design" class="text-gray-700 hover:text-purple-500">Design</a>
-    <a href="#photography" class="text-gray-700 hover:text-purple-500">Photography</a>
-    <a href="#about" class="text-gray-700 hover:text-purple-500">About</a>
-  </nav>
-
-  <!-- Design Section -->
-  <section class="notepad py-10 px-6" id="design">
-    <div class="container mx-auto">
-      <h2 class="text-2xl font-bold mb-6">UI Design Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <a href="Geolearn UI.png" data-lightbox="design" data-title="Geolearn UI">
-          <img src="Geolearn UI.png" alt="UI Design Geolearn" title="Geolearn UI" class="rounded shadow">
-        </a>
-        <a href="Geolearn UI2.png" data-lightbox="design" data-title="Geolearn UI 2">
-          <img src="Geolearn UI2.png" alt="UI Design Geolearn 2" title="Geolearn UI 2" class="rounded shadow">
-        </a>
-        <a href="Ecosnap UI.png" data-lightbox="design" data-title="Ecosnap UI">
-          <img src="Ecosnap UI.png" alt="Ecosnap UI Design" title="Ecosnap UI" class="rounded shadow">
-        </a>
-        <a href="Agrotourism.png" data-lightbox="design" data-title="Agrotourism Poster">
-          <img src="Agrotourism.png" alt="Agrotourism Design" title="Agrotourism Poster" class="rounded shadow">
-        </a>
-        <a href="Game UI.png" data-lightbox="design" data-title="Game UI Design">
-          <img src="Game UI.png" alt="Game UI Design" title="Game UI" class="rounded shadow">
-        </a>
-        <a href="Game UI2.png" data-lightbox="design" data-title="Game UI 2">
-          <img src="Game UI2.png" alt="Game UI 2 Design" title="Game UI 2" class="rounded shadow">
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Photography Section -->
-  <section class="notepad py-10 px-6" id="photography">
-    <div class="container mx-auto">
-      <h2 class="text-2xl font-bold mb-6">Photography</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <a href="foto1.jpg" data-lightbox="photography" data-title="Photography 1">
-          <img src="foto1.jpg" alt="Photography 1" class="rounded shadow" />
-        </a>
-        <a href="foto2.jpg" data-lightbox="photography" data-title="Photography 2">
-          <img src="foto2.jpg" alt="Photography 2" class="rounded shadow" />
-        </a>
-        <a href="foto3.jpg" data-lightbox="photography" data-title="Photography 3">
-          <img src="foto3.jpg" alt="Photography 3" class="rounded shadow" />
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="notepad py-10 px-6" id="about">
-    <div class="container mx-auto text-center">
-      <h2 class="text-2xl font-bold mb-4">About Me</h2>
-      <p class="max-w-2xl mx-auto text-gray-600">
-        Saya adalah seorang desainer multimedia dengan minat di bidang desain UI, fotografi, dan pengembangan konten kreatif. Portofolio ini merupakan kumpulan karya saya selama proses pembelajaran dan eksplorasi di bidang desain digital.
-      </p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-100 py-6 text-center text-gray-600">
-    <p>&copy; 2025 Hikmah Bachtiarima Dewi. All rights reserved.</p>
-  </footer>
-
-  <!-- Lightbox Script -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </body>
 </html>
