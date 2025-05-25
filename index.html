@@ -8,7 +8,6 @@
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
   <style>
    body {
@@ -51,7 +50,6 @@
         opacity: 0.3;
       }
     }
-    /* Original styles from your CSS */
     @media (max-width: 768px) {
       .features {
         grid-template-columns: 1fr !important;
@@ -424,6 +422,41 @@
     img:hover {
       transform: scale(1.05);
     }
+    /* Modal styles */
+    #image-modal {
+      display: none;
+      position: fixed;
+      z-index: 1050;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+    #image-modal.show {
+      display: flex;
+    }
+    #image-modal img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    #image-modal button.close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+    }
   </style>
  </head>
  <body>
@@ -448,7 +481,7 @@
      <a class="hover:underline" href="#project">
       Project
      </a>
-     <a class="hover:underline" href="#cv">
+     <a class="hover:underline" href="cv.html" rel="noopener noreferrer" target="_blank">
       CV
      </a>
      <a class="hover:underline" href="#contact">
@@ -515,7 +548,7 @@
     </div>
     <div class="features">
      <div class="card pink">
-      <a href="#cv" style="color: white; text-decoration: none;">
+      <a href="cv.html" rel="noopener noreferrer" style="color: white; text-decoration: none;" target="_blank">
        CV
       </a>
       <div class="icon">
@@ -602,24 +635,12 @@
        IoT
       </h3>
       <div class="photo-grid">
-       <a data-lightbox="iot" href="https://placehold.co/600x400/png?text=Home+Automation+3D+Render">
-        <img alt="3D render of a modern home automation system with smart devices and sensors" height="400" src="https://storage.googleapis.com/a1aa/image/fb6c523b-c3c7-4395-e9bc-418f83e28410.jpg" width="600"/>
-       </a>
-       <a data-lightbox="iot" href="https://placehold.co/600x400/png?text=Smart+Watering+3D+Render">
-        <img alt="3D render of a smart watering system with automated irrigation in a garden" height="400" src="https://storage.googleapis.com/a1aa/image/08a6aa18-646c-4ed4-0346-b0d2fd78e458.jpg" width="600"/>
-       </a>
-       <a data-lightbox="iot" href="https://placehold.co/600x400/png?text=Road+Monitoring+1">
-        <img alt="3D render of road monitoring system with cameras and sensors on a highway" height="400" src="https://storage.googleapis.com/a1aa/image/31dade5c-fb03-4b5e-5def-0f84f9135ef9.jpg" width="600"/>
-       </a>
-       <a data-lightbox="iot" href="https://placehold.co/600x400/png?text=Road+Monitoring+2">
-        <img alt="3D render showing traffic monitoring with smart cameras and data analytics" height="400" src="https://storage.googleapis.com/a1aa/image/970c3145-5f6e-4278-c666-1e773b0bec2d.jpg" width="600"/>
-       </a>
-       <a data-lightbox="iot" href="https://placehold.co/600x400/png?text=Flood+Sensor+2">
-        <img alt="3D render of flood sensor device installed near riverbank for early warning" height="400" src="https://storage.googleapis.com/a1aa/image/1680a101-4882-4a8e-2e7c-c5a4ff55e7d9.jpg" width="600"/>
-       </a>
-       <a data-lightbox="iot" href="https://placehold.co/600x400/png?text=Flood+Sensor+3">
-        <img alt="3D render of flood sensor with wireless communication and alert system" height="400" src="https://storage.googleapis.com/a1aa/image/09f98d15-7914-4560-de28-f3a75e6a4866.jpg" width="600"/>
-       </a>
+       <img alt="3D render of a modern home automation system with smart devices and sensors" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Home+Automation+3D+Render" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/18a2da2a-d4ec-4a23-4262-5eac98d45f9d.jpg" width="600"/>
+       <img alt="3D render of a smart watering system with automated irrigation in a garden" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Smart+Watering+3D+Render" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/5c09587d-a455-439a-4954-f0e631990ba8.jpg" width="600"/>
+       <img alt="3D render of road monitoring system with cameras and sensors on a highway" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Road+Monitoring+1" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/8fa32649-b72a-4220-c914-8d623a074a4e.jpg" width="600"/>
+       <img alt="3D render showing traffic monitoring with smart cameras and data analytics" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Road+Monitoring+2" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/93c97d9a-4b22-4ed8-6110-f9431ab9805a.jpg" width="600"/>
+       <img alt="3D render of flood sensor device installed near riverbank for early warning" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Flood+Sensor+2" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/46a3a746-3193-44d8-d8f7-88b54ef39b42.jpg" width="600"/>
+       <img alt="3D render of flood sensor with wireless communication and alert system" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Flood+Sensor+3" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1bf2d933-1de5-4dc2-e411-04e7b4655399.jpg" width="600"/>
       </div>
      </div>
      <div class="course">
@@ -627,24 +648,12 @@
        Hotel
       </h3>
       <div class="photo-grid">
-       <a data-lightbox="hotel" href="https://placehold.co/600x400/png?text=Apartment+Environment+1">
-        <img alt="3D render of apartment environment showing exterior and landscaping" height="400" src="https://storage.googleapis.com/a1aa/image/dd7bf38a-51dc-4e4b-c248-84951aea68b1.jpg" width="600"/>
-       </a>
-       <a data-lightbox="hotel" href="https://placehold.co/600x400/png?text=Apartment+Environment+2">
-        <img alt="3D render of apartment complex with modern architecture and green spaces" height="400" src="https://storage.googleapis.com/a1aa/image/4696f392-0d06-4e98-2b1e-6475162c90cb.jpg" width="600"/>
-       </a>
-       <a data-lightbox="hotel" href="https://placehold.co/600x400/png?text=Apartment+Lobby+1">
-        <img alt="3D render of apartment lobby interior with modern furniture and lighting" height="400" src="https://storage.googleapis.com/a1aa/image/6dbab868-da51-4358-e78e-ccdd51ab82a3.jpg" width="600"/>
-       </a>
-       <a data-lightbox="hotel" href="https://placehold.co/600x400/png?text=Apartment+Lobby+3">
-        <img alt="3D render of apartment lobby showing reception and seating area" height="400" src="https://storage.googleapis.com/a1aa/image/6d5cefb8-a107-4059-345a-6f6bd32e1f4b.jpg" width="600"/>
-       </a>
-       <a data-lightbox="hotel" href="https://placehold.co/600x400/png?text=Apartment+Lobby+4">
-        <img alt="3D render of apartment lobby with decorative elements and lighting" height="400" src="https://storage.googleapis.com/a1aa/image/61227885-7fc4-4980-2d3d-107a6e4a889a.jpg" width="600"/>
-       </a>
-       <a data-lightbox="hotel" href="https://placehold.co/600x400/png?text=Apartment+Lobby+6">
-        <img alt="3D render of apartment lobby with modern design and plants" height="400" src="https://storage.googleapis.com/a1aa/image/5be7890a-469b-475c-8efd-504675863386.jpg" width="600"/>
-       </a>
+       <img alt="3D render of apartment environment showing exterior and landscaping" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Apartment+Environment+1" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/25037913-2284-42c6-bada-5781a908c560.jpg" width="600"/>
+       <img alt="3D render of apartment complex with modern architecture and green spaces" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Apartment+Environment+2" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/08770f91-d0d1-4394-da7a-b9688029fafc.jpg" width="600"/>
+       <img alt="3D render of apartment lobby interior with modern furniture and lighting" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Apartment+Lobby+1" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/dcd063a5-dd10-479f-f493-73da33c58d09.jpg" width="600"/>
+       <img alt="3D render of apartment lobby showing reception and seating area" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Apartment+Lobby+3" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/ffe46860-ac3e-473c-3bd8-025c592d70d6.jpg" width="600"/>
+       <img alt="3D render of apartment lobby with decorative elements and lighting" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Apartment+Lobby+4" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/ddfdb7da-61b0-4122-492c-e8de58f41f39.jpg" width="600"/>
+       <img alt="3D render of apartment lobby with modern design and plants" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Apartment+Lobby+6" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/c6fc2077-6a00-4b9e-cd70-89f53a0a6e48.jpg" width="600"/>
       </div>
      </div>
     </div>
@@ -660,24 +669,12 @@
        Nature
       </h3>
       <div class="photo-grid">
-       <a data-lightbox="nature" href="https://placehold.co/600x400/jpg?text=Nature+Photo+1">
-        <img alt="Photo of a lush green forest with sunlight filtering through trees" height="400" src="https://storage.googleapis.com/a1aa/image/a315a851-eee3-4163-6103-4ed467a45e88.jpg" width="600"/>
-       </a>
-       <a data-lightbox="nature" href="https://placehold.co/600x400/jpg?text=Nature+Photo+2">
-        <img alt="Photo of a calm lake reflecting mountains and blue sky" height="400" src="https://storage.googleapis.com/a1aa/image/ea7a918e-d9ae-4164-5b41-db6e1ad0dfb0.jpg" width="600"/>
-       </a>
-       <a data-lightbox="nature" href="https://placehold.co/600x400/jpg?text=Nature+Photo+3">
-        <img alt="Photo of colorful flowers blooming in a garden" height="400" src="https://storage.googleapis.com/a1aa/image/d499cc0a-9505-4e38-f3f1-8581dcdc85f6.jpg" width="600"/>
-       </a>
-       <a data-lightbox="nature" href="https://placehold.co/600x400/jpg?text=Nature+Photo+4">
-        <img alt="Photo of a waterfall cascading down rocky cliffs" height="400" src="https://storage.googleapis.com/a1aa/image/4bff6227-ee9f-4416-cbbf-814e045ce16f.jpg" width="600"/>
-       </a>
-       <a data-lightbox="nature" href="https://placehold.co/600x400/jpg?text=Nature+Photo+5">
-        <img alt="Photo of a sunrise over a misty valley" height="400" src="https://storage.googleapis.com/a1aa/image/389ddfaf-cd5d-4615-90e5-b4786e4fc3f8.jpg" width="600"/>
-       </a>
-       <a data-lightbox="nature" href="https://placehold.co/600x400/jpg?text=Nature+Photo+6">
-        <img alt="Photo of a close-up of a butterfly on a flower" height="400" src="https://storage.googleapis.com/a1aa/image/73b7ad5a-2c6a-4faa-a4a6-0048b9f59e2c.jpg" width="600"/>
-       </a>
+       <img alt="Photo of a lush green forest with sunlight filtering through trees" class="popup-image" data-full="https://placehold.co/1200x800/jpg?text=Nature+Photo+1" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/d68f6fa5-ebcc-457e-4fe3-03686b9e0e3e.jpg" width="600"/>
+       <img alt="Photo of a calm lake reflecting mountains and blue sky" class="popup-image" data-full="https://placehold.co/1200x800/jpg?text=Nature+Photo+2" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/be0bc5db-a812-4b38-12cf-83f0fb60b2dc.jpg" width="600"/>
+       <img alt="Photo of colorful flowers blooming in a garden" class="popup-image" data-full="https://placehold.co/1200x800/jpg?text=Nature+Photo+3" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/faf5355b-4868-4d8b-d9ea-4055bd6a7e2b.jpg" width="600"/>
+       <img alt="Photo of a waterfall cascading down rocky cliffs" class="popup-image" data-full="https://placehold.co/1200x800/jpg?text=Nature+Photo+4" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/c8023f6e-7746-4a5f-5049-1bf7b0afe6b8.jpg" width="600"/>
+       <img alt="Photo of a sunrise over a misty valley" class="popup-image" data-full="https://placehold.co/1200x800/jpg?text=Nature+Photo+5" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/f2718cb1-ccfe-4aaf-a055-b47ac1e578fa.jpg" width="600"/>
+       <img alt="Photo of a close-up of a butterfly on a flower" class="popup-image" data-full="https://placehold.co/1200x800/jpg?text=Nature+Photo+6" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/449cdc41-c3ee-45d1-19d2-70c35cca43d1.jpg" width="600"/>
       </div>
      </div>
      <div class="lesson">
@@ -685,24 +682,12 @@
        Human Interest
       </h3>
       <div class="photo-grid">
-       <a data-lightbox="human" href="https://placehold.co/600x400/jpg?text=Human+Interest+Photo+1">
-        <img alt="Photo of a smiling elderly woman in natural light" height="400" src="https://storage.googleapis.com/a1aa/image/e634b6d6-d0a3-4226-d87e-51231297362b.jpg" width="600"/>
-       </a>
-       <a data-lightbox="human" href="https://placehold.co/600x400/jpg?text=Human+Interest+Photo+2">
-        <img alt="Photo of children playing joyfully in a park" height="400" src="https://storage.googleapis.com/a1aa/image/0f633a9e-999d-4160-f05c-2f9614856b52.jpg" width="600"/>
-       </a>
-       <a data-lightbox="human" href="https://placehold.co/600x400/jpg?text=Human+Interest+Photo+3">
-        <img alt="Photo of a street vendor selling fruits with a warm smile" height="400" src="https://storage.googleapis.com/a1aa/image/f27d83c4-da03-491f-b423-72ee844b1491.jpg" width="600"/>
-       </a>
-       <a data-lightbox="human" href="https://placehold.co/600x400/jpg?text=Human+Interest+Photo+4">
-        <img alt="Photo of a musician playing guitar on a city street" height="400" src="https://storage.googleapis.com/a1aa/image/17f7da68-3a25-4427-d375-6a06772f1be9.jpg" width="600"/>
-       </a>
-       <a data-lightbox="human" href="https://placehold.co/600x400/jpg?text=Human+Interest+Photo+5">
-        <img alt="Photo of a group of friends laughing together" height="400" src="https://storage.googleapis.com/a1aa/image/810bb1aa-379e-452b-7bc1-078155d289a6.jpg" width="600"/>
-       </a>
-       <a data-lightbox="human" href="https://placehold.co/600x400/jpg?text=Human+Interest+Photo+6">
-        <img alt="Photo of a child holding a colorful balloon" height="400" src="https://storage.googleapis.com/a1aa/image/8ee0b67d-dac9-42f0-549d-8ff2f620456a.jpg" width="600"/>
-       </a>
+       <img alt="Photo of a smiling elderly woman in natural light" class="popup-image" data-full="https://placehold.co/1200x800/jpg?text=Human+Interest+Photo+1" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/07298691-eb2b-4c74-fe54-fc2eabb3af83.jpg" width="600"/>
+       <img alt="Photo of children playing joyfully in a park" class="popup-image" data-full="https://placehold.co/1200x800/jpg?text=Human+Interest+Photo+2" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/40b46a78-f36b-4aba-e58a-2a18c579d2d6.jpg" width="600"/>
+       <img alt="Photo of a street vendor selling fruits with a warm smile" class="popup-image" data-full="https://placehold.co/1200x800/jpg?text=Human+Interest+Photo+3" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/4434b6b8-6f6d-4350-82d8-18a4fa9790b0.jpg" width="600"/>
+       <img alt="Photo of a musician playing guitar on a city street" class="popup-image" data-full="https://placehold.co/1200x800/jpg?text=Human+Interest+Photo+4" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/4ead5c42-e99a-42d4-a373-5a3db5bb75bf.jpg" width="600"/>
+       <img alt="Photo of a group of friends laughing together" class="popup-image" data-full="https://placehold.co/1200x800/jpg?text=Human+Interest+Photo+5" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/763a6164-01bb-4ef5-37c3-cfb440ae6c08.jpg" width="600"/>
+       <img alt="Photo of a child holding a colorful balloon" class="popup-image" data-full="https://placehold.co/1200x800/jpg?text=Human+Interest+Photo+6" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/9b283037-f664-4639-a3d9-b6f7b32f3365.jpg" width="600"/>
       </div>
      </div>
     </div>
@@ -718,18 +703,10 @@
        UI
       </h3>
       <div class="ui-grid">
-       <a data-lightbox="ui" href="https://placehold.co/600x400/png?text=Geolearn+UI">
-        <img alt="UI design mockup of Geolearn app showing dashboard screen" height="400" src="https://storage.googleapis.com/a1aa/image/7f572e77-ee23-4e5d-c2e4-ec3cff1e0740.jpg" width="600"/>
-       </a>
-       <a data-lightbox="ui" href="https://placehold.co/600x400/png?text=Geolearn">
-        <img alt="UI design mockup of Geolearn app showing map screen" height="400" src="https://storage.googleapis.com/a1aa/image/59e47d12-cddc-44df-bcc9-86fde29d2278.jpg" width="600"/>
-       </a>
-       <a data-lightbox="ui" href="https://placehold.co/600x400/jpg?text=HydroEdu+UI">
-        <img alt="UI design mockup of HydroEdu app showing login screen" height="400" src="https://storage.googleapis.com/a1aa/image/33c23ff7-9788-4669-7316-5bf01c8ec8ee.jpg" width="600"/>
-       </a>
-       <a data-lightbox="ui" href="https://placehold.co/600x400/jpg?text=HydroEdu">
-        <img alt="UI design mockup of HydroEdu app showing home screen" height="400" src="https://storage.googleapis.com/a1aa/image/841c3b0d-a3a4-4dce-dfb4-7e1c3af70d8b.jpg" width="600"/>
-       </a>
+       <img alt="UI design mockup of Geolearn app showing dashboard screen" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Geolearn+UI" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1ee5fe4b-351c-4a07-367c-9c3bf996c513.jpg" width="600"/>
+       <img alt="UI design mockup of Geolearn app showing map screen" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Geolearn" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1da3ac63-7972-4092-adce-909d3816e980.jpg" width="600"/>
+       <img alt="UI design mockup of HydroEdu app showing login screen" class="popup-image" data-full="https://placehold.co/1200x800/jpg?text=HydroEdu+UI" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/f2964651-f6bf-4180-0e2f-489d799fe6c1.jpg" width="600"/>
+       <img alt="UI design mockup of HydroEdu app showing home screen" class="popup-image" data-full="https://placehold.co/1200x800/jpg?text=HydroEdu" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1c3f4cf6-f476-4557-ae85-2777f093c59e.jpg" width="600"/>
       </div>
      </div>
      <div class="landing">
@@ -737,182 +714,15 @@
        Branding
       </h3>
       <div class="photo-grid">
-       <a data-lightbox="brand" href="https://placehold.co/600x400/png?text=Banner">
-        <img alt="Branding banner design with colorful graphics and text" height="400" src="https://storage.googleapis.com/a1aa/image/d0fd7180-0d02-4529-d995-2361bfab8225.jpg" width="600"/>
-       </a>
-       <a data-lightbox="brand" href="https://placehold.co/600x400/png?text=Flyer">
-        <img alt="Flyer design for event promotion with bold typography" height="400" src="https://storage.googleapis.com/a1aa/image/43a8e0d0-81af-4ee8-e98f-db112d7db7f2.jpg" width="600"/>
-       </a>
-       <a data-lightbox="brand" href="https://placehold.co/600x400/png?text=Spanduk">
-        <img alt="Spanduk (banner) design with logo and slogan" height="400" src="https://storage.googleapis.com/a1aa/image/b4ac6f21-a716-49ef-9015-0b61a7bab0f3.jpg" width="600"/>
-       </a>
-       <a data-lightbox="brand" href="https://placehold.co/600x400/png?text=Nametag">
-        <img alt="Nametag design with name and company logo" height="400" src="https://storage.googleapis.com/a1aa/image/23278b7e-5c11-4986-f717-d3eaeff92b91.jpg" width="600"/>
-       </a>
-       <a data-lightbox="brand" href="https://placehold.co/600x400/png?text=Mockup">
-        <img alt="Product mockup design showing packaging and branding" height="400" src="https://storage.googleapis.com/a1aa/image/53cde74c-500d-4ef1-2fa0-731e6599b8de.jpg" width="600"/>
-       </a>
-       <a data-lightbox="brand" href="https://placehold.co/600x400/png?text=Produk">
-        <img alt="Product branding design with logo and label" height="400" src="https://storage.googleapis.com/a1aa/image/a7c8dc8d-d4f9-4fc4-b5ef-cc59408874a7.jpg" width="600"/>
-       </a>
+       <img alt="Branding banner design with colorful graphics and text" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Banner" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/d8e15bef-eb6e-48cb-671f-0d97b75a62b2.jpg" width="600"/>
+       <img alt="Flyer design for event promotion with bold typography" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Flyer" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/ef9a390a-0794-4ab3-b3a8-bc0f241f310d.jpg" width="600"/>
+       <img alt="Spanduk (banner) design with logo and slogan" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Spanduk" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/4325b9ca-5d84-43cf-e1dd-42d37f52929c.jpg" width="600"/>
+       <img alt="Nametag design with name and company logo" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Nametag" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/359508dd-0fa1-456f-00ea-39bf78d2f9b6.jpg" width="600"/>
+       <img alt="Product mockup design showing packaging and branding" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Mockup" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/6c131ebd-fa62-4a8d-252b-984653c0d4f3.jpg" width="600"/>
+       <img alt="Product branding design with logo and label" class="popup-image" data-full="https://placehold.co/1200x800/png?text=Produk" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1985f444-059c-4b2c-876a-25c06555cbf6.jpg" width="600"/>
       </div>
      </div>
     </div>
-   </section>
-   <!-- CV Section -->
-   <section class="max-w-5xl mx-auto p-6 my-12 bg-white rounded-lg text-black shadow-lg" id="cv">
-    <h2 class="text-yellow-400 text-4xl font-extrabold mb-8 text-center">
-     Curriculum Vitae
-    </h2>
-    <section class="mb-12">
-     <h3 class="text-2xl font-bold border-b border-yellow-400 pb-2 mb-4">
-      Personal Information
-     </h3>
-     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-900">
-      <div>
-       <p>
-        <span class="font-semibold">
-         Name:
-        </span>
-        Hikmah Bachtiarima Dewi
-       </p>
-       <p>
-        <span class="font-semibold">
-         Email:
-        </span>
-        hbachtiarimadewi@gmail.com
-       </p>
-       <p>
-        <span class="font-semibold">
-         Phone:
-        </span>
-        +62 812 3456 7890
-       </p>
-       <p>
-        <span class="font-semibold">
-         Address:
-        </span>
-        Jakarta, Indonesia
-       </p>
-      </div>
-      <div>
-       <img alt="Portrait photo of Hikmah Bachtiarima Dewi wearing casual clothes smiling in studio lighting" class="rounded-lg shadow-lg mx-auto md:mx-0" height="300" src="https://storage.googleapis.com/a1aa/image/2227b996-705c-4980-8fae-e56527fab933.jpg" width="300"/>
-      </div>
-     </div>
-    </section>
-    <section class="mb-12">
-     <h3 class="text-2xl font-bold border-b border-yellow-400 pb-2 mb-4">
-      Education
-     </h3>
-     <ul class="list-disc list-inside space-y-2 text-gray-900">
-      <li>
-       <span class="font-semibold">
-        University of Indonesia
-       </span>
-       — Bachelor of Multimedia (Expected Graduation: 2024)
-      </li>
-      <li>
-       <span class="font-semibold">
-        High School XYZ
-       </span>
-       — Science Major (Graduated 2019)
-      </li>
-     </ul>
-    </section>
-    <section class="mb-12">
-     <h3 class="text-2xl font-bold border-b border-yellow-400 pb-2 mb-4">
-      Skills
-     </h3>
-     <div class="flex flex-wrap gap-4 text-gray-900">
-      <span class="bg-yellow-400 text-black px-3 py-1 rounded-full font-semibold shadow-sm">
-       AI
-      </span>
-      <span class="bg-yellow-400 text-black px-3 py-1 rounded-full font-semibold shadow-sm">
-       After Effects
-      </span>
-      <span class="bg-yellow-400 text-black px-3 py-1 rounded-full font-semibold shadow-sm">
-       Photoshop
-      </span>
-      <span class="bg-yellow-400 text-black px-3 py-1 rounded-full font-semibold shadow-sm">
-       Blender
-      </span>
-     </div>
-    </section>
-    <section class="mb-12">
-     <h3 class="text-2xl font-bold border-b border-yellow-400 pb-2 mb-4">
-      Experience
-     </h3>
-     <ul class="list-disc list-inside space-y-2 text-gray-900">
-      <li>
-       <span class="font-semibold">
-        Publication and Documentation
-       </span>
-       — Assisted in multimedia documentation and publication projects.
-      </li>
-      <li>
-       <span class="font-semibold">
-        Animator Muda Certification
-       </span>
-       — Certified as a young animator.
-      </li>
-     </ul>
-    </section>
-    <section class="mb-12">
-     <h3 class="text-2xl font-bold border-b border-yellow-400 pb-2 mb-4">
-      Projects Highlights
-     </h3>
-     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-yellow-400 text-black rounded-lg p-4 shadow-lg">
-       <h4 class="font-bold text-lg mb-2">
-        3D Render - IoT
-       </h4>
-       <p>
-        Developed multiple 3D renderings for IoT projects including home automation, smart watering, and road monitoring.
-       </p>
-      </div>
-      <div class="bg-yellow-400 text-black rounded-lg p-4 shadow-lg">
-       <h4 class="font-bold text-lg mb-2">
-        Photography
-       </h4>
-       <p>
-        Captured nature and human interest photography with a focus on storytelling and composition.
-       </p>
-      </div>
-     </div>
-    </section>
-    <section class="mb-12">
-     <h3 class="text-2xl font-bold border-b border-yellow-400 pb-2 mb-4">
-      Certifications
-     </h3>
-     <ul class="list-disc list-inside space-y-2 text-gray-900">
-      <li>
-       Animator Muda Certification
-      </li>
-      <li>
-       Adobe Certified Expert (Photoshop)
-      </li>
-      <li>
-       Blender 3D Modeling Certificate
-      </li>
-     </ul>
-    </section>
-    <section class="mb-12">
-     <h3 class="text-2xl font-bold border-b border-yellow-400 pb-2 mb-4">
-      Contact
-     </h3>
-     <p>
-      Email:
-      <a href="mailto:hbachtiarimadewi@gmail.com">
-       hbachtiarimadewi@gmail.com
-      </a>
-     </p>
-     <p>
-      Phone: +62 812 3456 7890
-     </p>
-     <p>
-      Location: Jakarta, Indonesia
-     </p>
-    </section>
    </section>
    <!-- Form Section -->
    <footer class="form-section" id="contact">
@@ -929,13 +739,19 @@
     </form>
    </footer>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js">
-  </script>
+  <!-- Image Modal -->
+  <div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center p-4 hidden" id="image-modal" role="dialog">
+   <button aria-label="Close image" class="close-btn absolute top-4 right-4 text-white text-4xl font-bold" onclick="closeModal()">
+    ×
+   </button>
+   <img alt="" class="max-w-full max-h-full rounded-lg shadow-lg" id="modal-image" src=""/>
+  </div>
   <script>
    function toggleMenu() {
       const menu = document.getElementById("nav-menu");
       menu.classList.toggle("show");
     }
+
     window.addEventListener("load", function () {
       const loader = document.getElementById("loader-wrapper");
       loader.style.opacity = "0";
@@ -943,6 +759,40 @@
       setTimeout(() => {
         loader.style.display = "none";
       }, 500);
+    });
+
+    // Modal logic
+    const modal = document.getElementById("image-modal");
+    const modalImage = document.getElementById("modal-image");
+    const images = document.querySelectorAll(".popup-image");
+
+    images.forEach((img) => {
+      img.addEventListener("click", () => {
+        modalImage.src = img.dataset.full || img.src;
+        modalImage.alt = img.alt;
+        modal.classList.add("show");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    function closeModal() {
+      modal.classList.remove("show");
+      modalImage.src = "";
+      modalImage.alt = "";
+      document.body.style.overflow = "";
+    }
+
+    // Close modal on clicking outside image or pressing Escape
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal || e.target.classList.contains("close-btn")) {
+        closeModal();
+      }
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("show")) {
+        closeModal();
+      }
     });
   </script>
  </body>
