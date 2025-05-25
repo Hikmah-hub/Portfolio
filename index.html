@@ -1,722 +1,949 @@
 <!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Hikmah's</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
-
-    <style>
-	    @media (max-width: 768px) {
-  .features {
-    grid-template-columns: 1fr !important;
-  }
-
-  .card.big {
-    grid-column: span 1 !important;
-  }
-}
-
-        html {
-          scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #000000;
-            margin: 0;	
-        }
-        .container {
-            max-width: 1920px;
-            margin: 0 auto;
-            background-color: #000000;
-            color: #ffffff;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 36px;
-        }
-        .header nav a {
-            margin: 0 8px;
-            text-decoration: none;
-            color: #ffffff;
-        }
-        .header button {
-            background-color: #ffff00;
-            color: #000000;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-        }
-	    button:hover {
-  background-color: #ffd700;
-  transform: scale(1.05);
-  transition: all 0.3s ease;
-}
-
-        .hero {
-            text-align: center;
-            padding: 48px 16px;
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-        }
-        .hero button {
-            background-color: #ffff00;
-            color: #000000;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 4px;
-            margin-bottom: 16px;
-        }
-        .hero .dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-        }
-        .hero .dots div {
-            width: 12px;
-            height: 12px;
-            background-color: #ffffff;
-            border-radius: 50%;
-        }
-        
-        .form-section {
-            background-color: #ADD8E6;
-            color: #ffffff;
-            padding: 32px;
-            border-radius: 8px;
-            margin: 16px;
-        }
-        .form-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-        }
-        .form-section form {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        .form-section input {
-            padding: 8px;
-            border-radius: 4px;
-            border: none;
-        }
-        .form-section button {
-            background-color: #ffff00;
-            color: #000000;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-        }
-        .courses {
-            padding: 16px;
-        }
-        .courses h2 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-        }
-        .courses .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 16px;
-        }
-        .courses .buttons button {
-            background-color: #4a4a4a;
-            color: #ffffff;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-        }
-        .courses .course-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-        }
-        @media (min-width: 768px) {
-            .courses .course-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        .course {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 16px;
-            border-radius: 8px;
-        }
-        .course h3 {
-            font-size: 1.25rem;
-            margin-bottom: 8px;
-        }
-        .course ul {
-            list-style-type: disc;
-            padding-left: 16px;
-        }
-        .course .price {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 16px;
-        }
-        .course .price button {
-            background-color: #ffff00;
-            color: #000000;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-        }
-        .lessons {
-            padding: 16px;
-        }
-        .lessons h2 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-        }
-        .lessons .lesson-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-        }
-        @media (min-width: 768px) {
-            .lessons .lesson-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        .lesson {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 16px;
-            border-radius: 8px;
-        }
-        .lesson h3 {
-            font-size: 1.25rem;
-            margin-bottom: 8px;
-        }
-        .lesson button {
-            background-color: #ffff00;
-            color: #000000;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-        }
-		
-		.landings {
-            padding: 16px;
-        }
-        .landings h2 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-        }
-        .landings .landing-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-        }
-        @media (min-width: 768px) {
-            .landings .landing-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        .landing {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 16px;
-            border-radius: 8px;
-        }
-        .landing h3 {
-            font-size: 1.25rem;
-            margin-bottom: 8px;
-        }
-        .landing button {
-            background-color: #ffff00;
-            color: #000000;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-        }
-		
-		.photo-grid {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 8px;
-			margin-top: 16px;
-		}
-
-		.photo-grid img {
-			width: 100%;
-			height: 120px;
-			border-radius: 8px;
-			object-fit: cover;
-		}
-		
-		.ui-grid {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			gap: 8px;
-			margin-top: 16px;
-		}
-		
-		.ui-grid img {
-			width: 100%;
-			height: 120px;
-			border-radius: 8px;
-			object-fit: cover;
-		}
-
-		.notepad {
-  		background: white;
-		border-radius: 10px;
-		padding: 1rem;
-		max-width: 100%;
-		width: 100%;
-		box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-		position: relative;
-		margin: 20px auto;
-		box-sizing: border-box;
-		}
-	    
-	    @media (max-width: 768px) {
-        .features {
-            grid-template-columns: 1fr !important;
-        }
-
-	    #container {
-  margin: 2rem auto;  /* Adjust the top-bottom spacing as you want */
-  max-width: 900px;   /* Optional: limit max width for better centering */
-  padding: 0 1rem;    /* Optional: horizontal padding inside container */
-}
-
-		.holes {
-		  display: flex;
-		  justify-content: space-between;
-		  padding: 0 1rem;
-		  margin-bottom: 1rem;
-		}
-
-		.holes span {
-		  width: 14px;
-		  height: 14px;
-		  background: black;
-		  border-radius: 50%;
-		  display: inline-block;
-		}
-
-		.features {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-		.card {
-		  padding: 1rem;
-		  border-radius: 12px;
-		  color: #000;
-		  font-weight: bold;
-		  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-		  min-height: 100px;
-		  display: flex;
-		  align-items: center;
-		  justify-content: center;
-		  text-align: center;
-		}
-
-
-		.pink {
-		  background-color: #FF69B4;
-		  color: white;
-		}
-
-		.yellow {
-		  background-color: #FFFF66;
-		}
-
-		.white {
-		  background-color: #ffffff;
-		}
-
-		.blue {
-		  background-color: #ADD8E6;
-		}
-
-		.big {
-		  grid-column: span 2;
-		  font-size: 1.2rem;
-		  position: relative;
-		}
-
-		.price {
-		  display: block;
-		  margin-top: 1rem;
-		  font-size: 1.5rem;
-		  color: #fff;
-		  background: #ff1493;
-		  padding: 0.5rem 1rem;
-		  border-radius: 20px;
-		  position: relative;
-		}
-
-		.icon {
-		  font-size: 1.5rem;
-		  margin-top: 0.5rem;
-		}
-
-		.bottom-heart {
-		  position: absolute;
-		  bottom: 10px;
-		  right: 10px;
-		  font-size: 1.5rem;
-		}
-		.photo-grid1 {			
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 8px;
-			margin-top: 16px;
-		}
-	img {
+<html class="scroll-smooth" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Hikmah's Portfolio
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: "Inter", sans-serif;
+      background-color: #000000;
+      margin: 0;
+      color: #f9fafb;
+    }
+    a {
+      color: #facc15;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    #loader-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000000;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #loader-text {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 20px;
+      color: #333;
+      animation: blink 5s infinite;
+    }
+    @keyframes blink {
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.3;
+      }
+    }
+    /* Original styles from your CSS */
+    @media (max-width: 768px) {
+      .features {
+        grid-template-columns: 1fr !important;
+      }
+      .card.big {
+        grid-column: span 1 !important;
+      }
+      .hamburger {
+        display: block;
+      }
+      #nav-menu {
+        display: none;
+        flex-direction: column;
+        gap: 16px;
+        background-color: #111;
+        padding: 16px;
+        margin-top: 16px;
+      }
+      #nav-menu.show {
+        display: flex;
+      }
+    }
+    .hamburger {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    .container {
+      max-width: 1920px;
+      margin: 0 auto;
+      background-color: #000000;
+      color: #ffffff;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 36px;
+    }
+    .header nav a {
+      margin: 0 8px;
+      text-decoration: none;
+      color: #ffffff;
+    }
+    .header button {
+      background-color: #ffff00;
+      color: #000000;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+    }
+    .hero {
+      text-align: center;
+      padding: 48px 16px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+    .hero button {
+      background-color: #ffff00;
+      color: #000000;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+    .hero .dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+    .hero .dots div {
+      width: 12px;
+      height: 12px;
+      background-color: #ffffff;
+      border-radius: 50%;
+    }
+    .form-section {
+      background-color: #add8e6;
+      color: #000000;
+      padding: 32px;
+      border-radius: 8px;
+      margin: 16px;
+    }
+    .form-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      color: #000000;
+    }
+    .form-section form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .form-section input {
+      padding: 8px;
+      border-radius: 4px;
+      border: none;
+    }
+    .form-section button {
+      background-color: #ffff00;
+      color: #000000;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .courses {
+      padding: 16px;
+    }
+    .courses h2 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+    .courses .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .courses .buttons button {
+      background-color: #4a4a4a;
+      color: #ffffff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .courses .course-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 768px) {
+      .courses .course-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .course {
+      background-color: #ffffff;
+      color: #000000;
+      padding: 16px;
+      border-radius: 8px;
+    }
+    .course h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+    .course ul {
+      list-style-type: disc;
+      padding-left: 16px;
+    }
+    .course .price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+    }
+    .course .price button {
+      background-color: #ffff00;
+      color: #000000;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .lessons {
+      padding: 16px;
+    }
+    .lessons h2 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+    .lessons .lesson-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 768px) {
+      .lessons .lesson-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .lesson {
+      background-color: #ffffff;
+      color: #000000;
+      padding: 16px;
+      border-radius: 8px;
+    }
+    .lesson h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+    .lesson button {
+      background-color: #ffff00;
+      color: #000000;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .landings {
+      padding: 16px;
+    }
+    .landings h2 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+    .landings .landing-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 768px) {
+      .landings .landing-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .landing {
+      background-color: #ffffff;
+      color: #000000;
+      padding: 16px;
+      border-radius: 8px;
+    }
+    .landing h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+    .landing button {
+      background-color: #ffff00;
+      color: #000000;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .photo-grid img {
+      width: 100%;
+      height: 120px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .photo-grid img:hover {
+      transform: scale(1.05);
+    }
+    .ui-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .ui-grid img {
+      width: 100%;
+      height: 120px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .ui-grid img:hover {
+      transform: scale(1.05);
+    }
+    .notepad {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      max-width: 1457px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      position: relative;
+      margin: 15px auto;
+      color: black;
+    }
+    .holes {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .holes span {
+      width: 14px;
+      height: 14px;
+      background: black;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .card {
+      padding: 1rem;
+      border-radius: 12px;
+      color: #000;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      position: relative;
+    }
+    .pink {
+      background-color: #ff69b4;
+      color: white;
+    }
+    .yellow {
+      background-color: #ffff66;
+    }
+    .white {
+      background-color: #ffffff;
+    }
+    .blue {
+      background-color: #add8e6;
+    }
+    .big {
+      grid-column: span 2;
+      font-size: 1.2rem;
+      position: relative;
+    }
+    .price {
+      display: block;
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      color: #fff;
+      background: #ff1493;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      position: relative;
+      cursor: default;
+    }
+    .icon {
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    .bottom-heart {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+    }
+    img {
       width: 100%;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
     }
     img:hover {
       transform: scale(1.05);
     }
-
-	    .hamburger {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  #nav-menu {
-    display: none;
-    flex-direction: column;
-    gap: 16px;
-    background-color: #111;
-    padding: 16px;
-    margin-top: 16px;
-  }
-
-  #nav-menu.show {
-    display: flex;
-  }
-}
-
-#loader-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000000;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#loader-text {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 20px;
-  color: #333;
-  animation: blink 5s infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-
-    </style>
-</head>
-<body>
-	<div id="loader-wrapper">
-  <div id="loader-text">Memuat portofolio...</div>
-</div>
-
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="text-2xl font-bold">Hikmah's Portfolio</div>
-		    <nav id="nav-menu" class="hidden md:flex space-x-4">
-  			<a href="#hero" class="hover:underline">Home</a>
-  			<a href="#about" class="hover:underline">About</a>
-			<a href="#project" class="hover:underline">Project</a>
-  			<a href="#contact" class="hover:underline">Contact</a>
-</nav>
-
-            </nav>
-		<!-- Tambahkan ini di dalam .header -->
-		<button class="hamburger" onclick="toggleMenu()">
- 		<i class="fas fa-bars"></i>
-		</button>
-
-        </header>
-
-        <!-- Hero Section -->
-        <section class="hero" id="hero">
-            <h1>PORTFOLIO🎨</h1>
-            <button>Start</button>
-            <div class="dots">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="notepad" id="about" id="contact">
-		<div class="holes">
-		  <!-- 13 black circles -->
-		  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-		  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-		</div>
-
-		<div class="features">
-		  <div class="card pink">
-			<a href="CV.pdf" target="_blank" style="color: white; text-decoration: none;">
-			CV
-			</a>
-			  <div class="icon">🌈</div>
-		  </div>
-		  <div class="card white">
-			<p>About Me</p>
-			<p>Hello, my name is Hikmah Bachtiarima Dewi. I'm currently a 4th student majoring in multimedia.</p>
-		  </div>
-		  <div class="card yellow">
-			<p>Education </p>
-			<p>Education University of Indonesian </p>
-			<div class="icon">🌸</div>
-		  </div>
-		  <div class="card white">
-			<p><strong>Skill </strong></p>
-			<blockquote>
-			  <p>AI, After Effects, Photoshop, Blender</p>
-			</blockquote>
-		  </div>
-
-		  <div class="card white">
-			<p>Experience</p>
-			<p>Publication and Documentation</p>
-		  </div>
-		  <div class="card blue">
-			<p>Certification </p>
-			<blockquote>
-			  <p>Animator Muda</p>
-			</blockquote>
-			<div class="icon">⭐️</div>
-				  </div>
-				  <div class="card pink big">
-					hbachtiarimadewi@gmail.com<br>
-					<span class="price">CONTACT!</span>
-					<div class="icon bottom-heart">💛</div>
-				  </div>
-				</div>
-		</section>
-
-      <!-- Courses Section -->
-        <section class="courses" id="project">
-	<button>Project</button>
-            <h2>3D Render🏢</h2>
-            <div class="buttons">
-            </div>
-            <div class="course-list">
-                <div class="course">
-                    <h3>IoT</h3>
-                    <div class="photo-grid">
-			    <a href="[HOME AUTOMATION].png" data-lightbox="iot">
-       				  <img src="[HOME AUTOMATION].png" alt="Photo 1">
-			    </a>
-			    <a href="[SMART WATERING].png" data-lightbox="iot">
-       				  <img src="[SMART WATERING].png" alt="Photo 2">
-			    </a>
-			    <a href="ROAD MONITORING 1.png" data-lightbox="iot">
-       				  <img src="ROAD MONITORING 1.png" alt="Photo 3">
-			    </a>
-			    <a href="ROAD MONITORING 2.png" data-lightbox="iot">
-       				  <img src="ROAD MONITORING 2.png" alt="Photo 4">
-			    </a>
-			    <a href="SENSOR BANJIR 2.png" data-lightbox="iot">
-       				  <img src="SENSOR BANJIR 2.png" alt="Photo 5">
-			    </a>
-			    <a href="SENSOR BANJIR 3.png" data-lightbox="iot">
-       				  <img src="SENSOR BANJIR 3.png" alt="Photo 6">
-			    </a>
-    				</div>
-                </div>
-                <div class="course">
-                    <h3>Hotel</h3>
-				  <div class="photo-grid">
-				<a href="APARTEMEN (ENVIRONMENT 1).png" data-lightbox="hotel">
-			  	    <img src="APARTEMEN (ENVIRONMENT 1).png" alt="Render 1">
-				</a>
-				<a href="APARTEMEN (ENVIRONMENT 2).png" data-lightbox="hotel">
-   				    <img src="APARTEMEN (ENVIRONMENT 2).png" alt="Render 2">
-				</a>
-				<a href="APARTEMEN 1 (LOBBY).png" data-lightbox="hotel">  
-   				    <img src="APARTEMEN 1 (LOBBY).png" alt="Render 3">
-				</a>
-				<a href="APARTEMEN 3 (LOBBY).png" data-lightbox="hotel">
-   				    <img src="APARTEMEN 3 (LOBBY).png" alt="Render 4">
-				</a>
-				<a href="APARTEMEN 4 (LOBBY).png" data-lightbox="hotel">
-   				    <img src="APARTEMEN 4 (LOBBY).png" alt="Render 5">
-				</a>
-				<a href="APARTEMEN 6 (LOBBY).png" data-lightbox="hotel">
-					<img src="APARTEMEN 6 (LOBBY).png" alt="Render 6">
-				</a>
-				  </div>
-                </div>
-            </div>
-        </section>
-	  
-	  
-		<!-- Lessons Section -->
-        <section class="lessons">
-            <h2>Photography📸</h2>
-          <div class="lesson-list">
-				
-            <div class="lesson">
-                    <h3>Nature</h3>
-			<div class="photo-grid">
-				<a href="DSC_0039.JPG" data-lightbox="nature">
-       				  <img src="DSC_0039.JPG" alt="Photo 1">
-				</a>
-				<a href="DSC_0106.JPG" data-lightbox="nature">
-       				  <img src="DSC_0106.JPG" alt="Photo 2">
-				</a>
-				<a href="DSC_0002.JPG" data-lightbox="nature">
-       				  <img src="DSC_0002.JPG" alt="Photo 3">
-				</a>
-				<a href="DSC_0028.JPG" data-lightbox="nature">
-       				  <img src="DSC_0028.JPG" alt="Photo 4">
-				</a>
-				<a href="DSC_0016.JPG" data-lightbox="nature">
-       				  <img src="DSC_0016.JPG" alt="Photo 5">
-				</a>
-				<a href="DSC_0075.JPG" data-lightbox="nature">
-       				  <img src="DSC_0075.JPG" alt="Photo 6">
-				</a>
-					</div>
-                    
-            </div>
-				
-            <div class="lesson">
-                    <h3>Human Interest</h3>
-					<div class="photo-grid">
-				<a href="DSC_0480.JPG" data-lightbox="hotel">
-					<img src="DSC_0480.JPG" alt="Photo 1"/>
-				</a>
-				<a href="DSC_0466.JPG" data-lightbox="hotel">
-        				<img src="DSC_0466.JPG" alt="Photo 2"/>
-				</a>
-				<a href="DSC_0550.JPG" data-lightbox="hotel">
-        				<img src="DSC_0550.JPG"  alt="Photo 3"/>
-				</a>
-				<a href="DSC_0578.JPG" data-lightbox="hotel">
-        				<img src="DSC_0578.JPG" alt="Photo 4"/>
-				</a>
-				<a href="DSC_0642.JPG" data-lightbox="hotel">
-        				<img src="DSC_0642.JPG" alt="Photo 5"/>
-				</a>
-				<a href="DSC_0645.JPG" data-lightbox="hotel">
-        				<img src="DSC_0645.JPG" alt="Photo 6"/>
-				</a>
-    				</div>
-            </div>
-            </div>
-        </section>
-		
-		<!-- Landing Section -->
-        <section class="landings">
-            <h2>Design</h2>
-          <div class="landing-list">
-            <div class="landing">
-                    <h3>UI</h3>
-			<div class="ui-grid">
-				<a href="Geolearn UI.png" data-lightbox="ui">
-       				  <img src="Geolearn UI.png" alt="Photo 1">
-				</a>
-				<a href="Geolearn.png" data-lightbox="ui">
-       				  <img src="Geolearn.png" alt="Photo 2">
-				</a>
-				<a href="HydroEdu UI.jpg" data-lightbox="ui">
-       				  <img src="HydroEdu UI.jpg" alt="Photo 3">
-				</a>
-				<a href="HydroEdu.jpg" data-lightbox="ui">
-       				  <img src="HydroEdu.jpg" alt="Photo 4">
-				</a>
-					</div>
-            </div>
-				
-            <div class="landing">
-                    <h3>Branding</h3>
-				<div class="photo-grid">
-					<a href="Banner.png" data-lightbox="brand">
-					<img src="Banner.png" alt="Photo 1"/>
-					</a>
-					<a href="Flyer.png" data-lightbox="brand">
-        				<img src="Flyer.png" alt="Photo 2"/>
-					</a>
-					<a href="Spanduk.png" data-lightbox="brand">
-        				<img src="Spanduk.png"  alt="Photo 3"/>
-					</a>
-					<a href="Nametag.png" data-lightbox="brand">
-        				<img src="Nametag.png" alt="Photo 4"/>
-					</a>
-					<a href="Mockup.png" data-lightbox="brand">
-        				<img src="Mockup.png" alt="Photo 5"/>
-					</a>
-					<a href="Produk.png" data-lightbox="brand">
-        				<img src="Produk.png" alt="Photo 6"/>
-					</a>
-    				</div>
-            </div>
-            </div>
-        </section>
-		
-		<!-- Form Section -->
-        <footer class="form-section">
-            <h2>Get in Touch👋</h2>
-            <form>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="tel" placeholder="Comment">
-                <button>Send</button>
-            </form>
-        </footer>
+  </style>
+ </head>
+ <body>
+  <div id="loader-wrapper">
+   <div id="loader-text">
+    Memuat portofolio...
+   </div>
+  </div>
+  <div class="container">
+   <!-- Header -->
+   <header class="header">
+    <div class="text-2xl font-bold">
+     Hikmah's Portfolio
     </div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-	<script>
- 	 function toggleMenu() {
-  	  const menu = document.getElementById("nav-menu");
- 	   menu.classList.toggle("show");
- 	 }
-</script>
-	<script>
-  window.addEventListener("load", function () {
-    const loader = document.getElementById("loader-wrapper");
-    loader.style.opacity = "0";
-    loader.style.transition = "opacity 0.5s ease";
-    setTimeout(() => {
-      loader.style.display = "none";
-    }, 500);
-  });
-</script>
-
-
-</body>
+    <nav class="hidden md:flex space-x-4" id="nav-menu">
+     <a class="hover:underline" href="#hero">
+      Home
+     </a>
+     <a class="hover:underline" href="#about">
+      About
+     </a>
+     <a class="hover:underline" href="#project">
+      Project
+     </a>
+     <a class="hover:underline" href="#cv">
+      CV
+     </a>
+     <a class="hover:underline" href="#contact">
+      Contact
+     </a>
+    </nav>
+    <button class="hamburger" onclick="toggleMenu()">
+     <i class="fas fa-bars">
+     </i>
+    </button>
+   </header>
+   <!-- Hero Section -->
+   <section class="hero" id="hero">
+    <h1>
+     PORTFOLIO🎨
+    </h1>
+    <button>
+     Start
+    </button>
+    <div class="dots">
+     <div>
+     </div>
+     <div>
+     </div>
+     <div>
+     </div>
+    </div>
+   </section>
+   <!-- Features Section -->
+   <section class="notepad" id="about">
+    <div class="holes">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </div>
+    <div class="features">
+     <div class="card pink">
+      <a href="#cv" style="color: white; text-decoration: none;">
+       CV
+      </a>
+      <div class="icon">
+       🌈
+      </div>
+     </div>
+     <div class="card white">
+      <p>
+       About Me
+      </p>
+      <p>
+       Hello, my name is Hikmah Bachtiarima Dewi. I'm currently a 4th student majoring in multimedia.
+      </p>
+     </div>
+     <div class="card yellow">
+      <p>
+       Education
+      </p>
+      <p>
+       Education University of Indonesian
+      </p>
+      <div class="icon">
+       🌸
+      </div>
+     </div>
+     <div class="card white">
+      <p>
+       <strong>
+        Skill
+       </strong>
+      </p>
+      <blockquote>
+       <p>
+        AI, After Effects, Photoshop, Blender
+       </p>
+      </blockquote>
+     </div>
+     <div class="card white">
+      <p>
+       Experience
+      </p>
+      <p>
+       Publication and Documentation
+      </p>
+     </div>
+     <div class="card blue">
+      <p>
+       Certification
+      </p>
+      <blockquote>
+       <p>
+        Animator Muda
+       </p>
+      </blockquote>
+      <div class="icon">
+       ⭐️
+      </div>
+     </div>
+     <div class="card pink big">
+      hbachtiarimadewi@gmail.com
+      <br/>
+      <span class="price">
+       CONTACT!
+      </span>
+      <div class="icon bottom-heart">
+       💛
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Courses Section -->
+   <section class="courses" id="project">
+    <button>
+     Project
+    </button>
+    <h2>
+     3D Render🏢
+    </h2>
+    <div class="buttons">
+    </div>
+    <div class="course-list">
+     <div class="course">
+      <h3>
+       IoT
+      </h3>
+      <div class="photo-grid">
+       <a data-lightbox="iot" href="https://placehold.co/600x400/png?text=Home+Automation+3D+Render">
+        <img alt="3D render of a modern home automation system with smart devices and sensors" height="400" src="https://storage.googleapis.com/a1aa/image/fb6c523b-c3c7-4395-e9bc-418f83e28410.jpg" width="600"/>
+       </a>
+       <a data-lightbox="iot" href="https://placehold.co/600x400/png?text=Smart+Watering+3D+Render">
+        <img alt="3D render of a smart watering system with automated irrigation in a garden" height="400" src="https://storage.googleapis.com/a1aa/image/08a6aa18-646c-4ed4-0346-b0d2fd78e458.jpg" width="600"/>
+       </a>
+       <a data-lightbox="iot" href="https://placehold.co/600x400/png?text=Road+Monitoring+1">
+        <img alt="3D render of road monitoring system with cameras and sensors on a highway" height="400" src="https://storage.googleapis.com/a1aa/image/31dade5c-fb03-4b5e-5def-0f84f9135ef9.jpg" width="600"/>
+       </a>
+       <a data-lightbox="iot" href="https://placehold.co/600x400/png?text=Road+Monitoring+2">
+        <img alt="3D render showing traffic monitoring with smart cameras and data analytics" height="400" src="https://storage.googleapis.com/a1aa/image/970c3145-5f6e-4278-c666-1e773b0bec2d.jpg" width="600"/>
+       </a>
+       <a data-lightbox="iot" href="https://placehold.co/600x400/png?text=Flood+Sensor+2">
+        <img alt="3D render of flood sensor device installed near riverbank for early warning" height="400" src="https://storage.googleapis.com/a1aa/image/1680a101-4882-4a8e-2e7c-c5a4ff55e7d9.jpg" width="600"/>
+       </a>
+       <a data-lightbox="iot" href="https://placehold.co/600x400/png?text=Flood+Sensor+3">
+        <img alt="3D render of flood sensor with wireless communication and alert system" height="400" src="https://storage.googleapis.com/a1aa/image/09f98d15-7914-4560-de28-f3a75e6a4866.jpg" width="600"/>
+       </a>
+      </div>
+     </div>
+     <div class="course">
+      <h3>
+       Hotel
+      </h3>
+      <div class="photo-grid">
+       <a data-lightbox="hotel" href="https://placehold.co/600x400/png?text=Apartment+Environment+1">
+        <img alt="3D render of apartment environment showing exterior and landscaping" height="400" src="https://storage.googleapis.com/a1aa/image/dd7bf38a-51dc-4e4b-c248-84951aea68b1.jpg" width="600"/>
+       </a>
+       <a data-lightbox="hotel" href="https://placehold.co/600x400/png?text=Apartment+Environment+2">
+        <img alt="3D render of apartment complex with modern architecture and green spaces" height="400" src="https://storage.googleapis.com/a1aa/image/4696f392-0d06-4e98-2b1e-6475162c90cb.jpg" width="600"/>
+       </a>
+       <a data-lightbox="hotel" href="https://placehold.co/600x400/png?text=Apartment+Lobby+1">
+        <img alt="3D render of apartment lobby interior with modern furniture and lighting" height="400" src="https://storage.googleapis.com/a1aa/image/6dbab868-da51-4358-e78e-ccdd51ab82a3.jpg" width="600"/>
+       </a>
+       <a data-lightbox="hotel" href="https://placehold.co/600x400/png?text=Apartment+Lobby+3">
+        <img alt="3D render of apartment lobby showing reception and seating area" height="400" src="https://storage.googleapis.com/a1aa/image/6d5cefb8-a107-4059-345a-6f6bd32e1f4b.jpg" width="600"/>
+       </a>
+       <a data-lightbox="hotel" href="https://placehold.co/600x400/png?text=Apartment+Lobby+4">
+        <img alt="3D render of apartment lobby with decorative elements and lighting" height="400" src="https://storage.googleapis.com/a1aa/image/61227885-7fc4-4980-2d3d-107a6e4a889a.jpg" width="600"/>
+       </a>
+       <a data-lightbox="hotel" href="https://placehold.co/600x400/png?text=Apartment+Lobby+6">
+        <img alt="3D render of apartment lobby with modern design and plants" height="400" src="https://storage.googleapis.com/a1aa/image/5be7890a-469b-475c-8efd-504675863386.jpg" width="600"/>
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Lessons Section -->
+   <section class="lessons">
+    <h2>
+     Photography📸
+    </h2>
+    <div class="lesson-list">
+     <div class="lesson">
+      <h3>
+       Nature
+      </h3>
+      <div class="photo-grid">
+       <a data-lightbox="nature" href="https://placehold.co/600x400/jpg?text=Nature+Photo+1">
+        <img alt="Photo of a lush green forest with sunlight filtering through trees" height="400" src="https://storage.googleapis.com/a1aa/image/a315a851-eee3-4163-6103-4ed467a45e88.jpg" width="600"/>
+       </a>
+       <a data-lightbox="nature" href="https://placehold.co/600x400/jpg?text=Nature+Photo+2">
+        <img alt="Photo of a calm lake reflecting mountains and blue sky" height="400" src="https://storage.googleapis.com/a1aa/image/ea7a918e-d9ae-4164-5b41-db6e1ad0dfb0.jpg" width="600"/>
+       </a>
+       <a data-lightbox="nature" href="https://placehold.co/600x400/jpg?text=Nature+Photo+3">
+        <img alt="Photo of colorful flowers blooming in a garden" height="400" src="https://storage.googleapis.com/a1aa/image/d499cc0a-9505-4e38-f3f1-8581dcdc85f6.jpg" width="600"/>
+       </a>
+       <a data-lightbox="nature" href="https://placehold.co/600x400/jpg?text=Nature+Photo+4">
+        <img alt="Photo of a waterfall cascading down rocky cliffs" height="400" src="https://storage.googleapis.com/a1aa/image/4bff6227-ee9f-4416-cbbf-814e045ce16f.jpg" width="600"/>
+       </a>
+       <a data-lightbox="nature" href="https://placehold.co/600x400/jpg?text=Nature+Photo+5">
+        <img alt="Photo of a sunrise over a misty valley" height="400" src="https://storage.googleapis.com/a1aa/image/389ddfaf-cd5d-4615-90e5-b4786e4fc3f8.jpg" width="600"/>
+       </a>
+       <a data-lightbox="nature" href="https://placehold.co/600x400/jpg?text=Nature+Photo+6">
+        <img alt="Photo of a close-up of a butterfly on a flower" height="400" src="https://storage.googleapis.com/a1aa/image/73b7ad5a-2c6a-4faa-a4a6-0048b9f59e2c.jpg" width="600"/>
+       </a>
+      </div>
+     </div>
+     <div class="lesson">
+      <h3>
+       Human Interest
+      </h3>
+      <div class="photo-grid">
+       <a data-lightbox="human" href="https://placehold.co/600x400/jpg?text=Human+Interest+Photo+1">
+        <img alt="Photo of a smiling elderly woman in natural light" height="400" src="https://storage.googleapis.com/a1aa/image/e634b6d6-d0a3-4226-d87e-51231297362b.jpg" width="600"/>
+       </a>
+       <a data-lightbox="human" href="https://placehold.co/600x400/jpg?text=Human+Interest+Photo+2">
+        <img alt="Photo of children playing joyfully in a park" height="400" src="https://storage.googleapis.com/a1aa/image/0f633a9e-999d-4160-f05c-2f9614856b52.jpg" width="600"/>
+       </a>
+       <a data-lightbox="human" href="https://placehold.co/600x400/jpg?text=Human+Interest+Photo+3">
+        <img alt="Photo of a street vendor selling fruits with a warm smile" height="400" src="https://storage.googleapis.com/a1aa/image/f27d83c4-da03-491f-b423-72ee844b1491.jpg" width="600"/>
+       </a>
+       <a data-lightbox="human" href="https://placehold.co/600x400/jpg?text=Human+Interest+Photo+4">
+        <img alt="Photo of a musician playing guitar on a city street" height="400" src="https://storage.googleapis.com/a1aa/image/17f7da68-3a25-4427-d375-6a06772f1be9.jpg" width="600"/>
+       </a>
+       <a data-lightbox="human" href="https://placehold.co/600x400/jpg?text=Human+Interest+Photo+5">
+        <img alt="Photo of a group of friends laughing together" height="400" src="https://storage.googleapis.com/a1aa/image/810bb1aa-379e-452b-7bc1-078155d289a6.jpg" width="600"/>
+       </a>
+       <a data-lightbox="human" href="https://placehold.co/600x400/jpg?text=Human+Interest+Photo+6">
+        <img alt="Photo of a child holding a colorful balloon" height="400" src="https://storage.googleapis.com/a1aa/image/8ee0b67d-dac9-42f0-549d-8ff2f620456a.jpg" width="600"/>
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Landing Section -->
+   <section class="landings">
+    <h2>
+     Design
+    </h2>
+    <div class="landing-list">
+     <div class="landing">
+      <h3>
+       UI
+      </h3>
+      <div class="ui-grid">
+       <a data-lightbox="ui" href="https://placehold.co/600x400/png?text=Geolearn+UI">
+        <img alt="UI design mockup of Geolearn app showing dashboard screen" height="400" src="https://storage.googleapis.com/a1aa/image/7f572e77-ee23-4e5d-c2e4-ec3cff1e0740.jpg" width="600"/>
+       </a>
+       <a data-lightbox="ui" href="https://placehold.co/600x400/png?text=Geolearn">
+        <img alt="UI design mockup of Geolearn app showing map screen" height="400" src="https://storage.googleapis.com/a1aa/image/59e47d12-cddc-44df-bcc9-86fde29d2278.jpg" width="600"/>
+       </a>
+       <a data-lightbox="ui" href="https://placehold.co/600x400/jpg?text=HydroEdu+UI">
+        <img alt="UI design mockup of HydroEdu app showing login screen" height="400" src="https://storage.googleapis.com/a1aa/image/33c23ff7-9788-4669-7316-5bf01c8ec8ee.jpg" width="600"/>
+       </a>
+       <a data-lightbox="ui" href="https://placehold.co/600x400/jpg?text=HydroEdu">
+        <img alt="UI design mockup of HydroEdu app showing home screen" height="400" src="https://storage.googleapis.com/a1aa/image/841c3b0d-a3a4-4dce-dfb4-7e1c3af70d8b.jpg" width="600"/>
+       </a>
+      </div>
+     </div>
+     <div class="landing">
+      <h3>
+       Branding
+      </h3>
+      <div class="photo-grid">
+       <a data-lightbox="brand" href="https://placehold.co/600x400/png?text=Banner">
+        <img alt="Branding banner design with colorful graphics and text" height="400" src="https://storage.googleapis.com/a1aa/image/d0fd7180-0d02-4529-d995-2361bfab8225.jpg" width="600"/>
+       </a>
+       <a data-lightbox="brand" href="https://placehold.co/600x400/png?text=Flyer">
+        <img alt="Flyer design for event promotion with bold typography" height="400" src="https://storage.googleapis.com/a1aa/image/43a8e0d0-81af-4ee8-e98f-db112d7db7f2.jpg" width="600"/>
+       </a>
+       <a data-lightbox="brand" href="https://placehold.co/600x400/png?text=Spanduk">
+        <img alt="Spanduk (banner) design with logo and slogan" height="400" src="https://storage.googleapis.com/a1aa/image/b4ac6f21-a716-49ef-9015-0b61a7bab0f3.jpg" width="600"/>
+       </a>
+       <a data-lightbox="brand" href="https://placehold.co/600x400/png?text=Nametag">
+        <img alt="Nametag design with name and company logo" height="400" src="https://storage.googleapis.com/a1aa/image/23278b7e-5c11-4986-f717-d3eaeff92b91.jpg" width="600"/>
+       </a>
+       <a data-lightbox="brand" href="https://placehold.co/600x400/png?text=Mockup">
+        <img alt="Product mockup design showing packaging and branding" height="400" src="https://storage.googleapis.com/a1aa/image/53cde74c-500d-4ef1-2fa0-731e6599b8de.jpg" width="600"/>
+       </a>
+       <a data-lightbox="brand" href="https://placehold.co/600x400/png?text=Produk">
+        <img alt="Product branding design with logo and label" height="400" src="https://storage.googleapis.com/a1aa/image/a7c8dc8d-d4f9-4fc4-b5ef-cc59408874a7.jpg" width="600"/>
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- CV Section -->
+   <section class="max-w-5xl mx-auto p-6 my-12 bg-white rounded-lg text-black shadow-lg" id="cv">
+    <h2 class="text-yellow-400 text-4xl font-extrabold mb-8 text-center">
+     Curriculum Vitae
+    </h2>
+    <section class="mb-12">
+     <h3 class="text-2xl font-bold border-b border-yellow-400 pb-2 mb-4">
+      Personal Information
+     </h3>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-900">
+      <div>
+       <p>
+        <span class="font-semibold">
+         Name:
+        </span>
+        Hikmah Bachtiarima Dewi
+       </p>
+       <p>
+        <span class="font-semibold">
+         Email:
+        </span>
+        hbachtiarimadewi@gmail.com
+       </p>
+       <p>
+        <span class="font-semibold">
+         Phone:
+        </span>
+        +62 812 3456 7890
+       </p>
+       <p>
+        <span class="font-semibold">
+         Address:
+        </span>
+        Jakarta, Indonesia
+       </p>
+      </div>
+      <div>
+       <img alt="Portrait photo of Hikmah Bachtiarima Dewi wearing casual clothes smiling in studio lighting" class="rounded-lg shadow-lg mx-auto md:mx-0" height="300" src="https://storage.googleapis.com/a1aa/image/2227b996-705c-4980-8fae-e56527fab933.jpg" width="300"/>
+      </div>
+     </div>
+    </section>
+    <section class="mb-12">
+     <h3 class="text-2xl font-bold border-b border-yellow-400 pb-2 mb-4">
+      Education
+     </h3>
+     <ul class="list-disc list-inside space-y-2 text-gray-900">
+      <li>
+       <span class="font-semibold">
+        University of Indonesia
+       </span>
+       — Bachelor of Multimedia (Expected Graduation: 2024)
+      </li>
+      <li>
+       <span class="font-semibold">
+        High School XYZ
+       </span>
+       — Science Major (Graduated 2019)
+      </li>
+     </ul>
+    </section>
+    <section class="mb-12">
+     <h3 class="text-2xl font-bold border-b border-yellow-400 pb-2 mb-4">
+      Skills
+     </h3>
+     <div class="flex flex-wrap gap-4 text-gray-900">
+      <span class="bg-yellow-400 text-black px-3 py-1 rounded-full font-semibold shadow-sm">
+       AI
+      </span>
+      <span class="bg-yellow-400 text-black px-3 py-1 rounded-full font-semibold shadow-sm">
+       After Effects
+      </span>
+      <span class="bg-yellow-400 text-black px-3 py-1 rounded-full font-semibold shadow-sm">
+       Photoshop
+      </span>
+      <span class="bg-yellow-400 text-black px-3 py-1 rounded-full font-semibold shadow-sm">
+       Blender
+      </span>
+     </div>
+    </section>
+    <section class="mb-12">
+     <h3 class="text-2xl font-bold border-b border-yellow-400 pb-2 mb-4">
+      Experience
+     </h3>
+     <ul class="list-disc list-inside space-y-2 text-gray-900">
+      <li>
+       <span class="font-semibold">
+        Publication and Documentation
+       </span>
+       — Assisted in multimedia documentation and publication projects.
+      </li>
+      <li>
+       <span class="font-semibold">
+        Animator Muda Certification
+       </span>
+       — Certified as a young animator.
+      </li>
+     </ul>
+    </section>
+    <section class="mb-12">
+     <h3 class="text-2xl font-bold border-b border-yellow-400 pb-2 mb-4">
+      Projects Highlights
+     </h3>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-yellow-400 text-black rounded-lg p-4 shadow-lg">
+       <h4 class="font-bold text-lg mb-2">
+        3D Render - IoT
+       </h4>
+       <p>
+        Developed multiple 3D renderings for IoT projects including home automation, smart watering, and road monitoring.
+       </p>
+      </div>
+      <div class="bg-yellow-400 text-black rounded-lg p-4 shadow-lg">
+       <h4 class="font-bold text-lg mb-2">
+        Photography
+       </h4>
+       <p>
+        Captured nature and human interest photography with a focus on storytelling and composition.
+       </p>
+      </div>
+     </div>
+    </section>
+    <section class="mb-12">
+     <h3 class="text-2xl font-bold border-b border-yellow-400 pb-2 mb-4">
+      Certifications
+     </h3>
+     <ul class="list-disc list-inside space-y-2 text-gray-900">
+      <li>
+       Animator Muda Certification
+      </li>
+      <li>
+       Adobe Certified Expert (Photoshop)
+      </li>
+      <li>
+       Blender 3D Modeling Certificate
+      </li>
+     </ul>
+    </section>
+    <section class="mb-12">
+     <h3 class="text-2xl font-bold border-b border-yellow-400 pb-2 mb-4">
+      Contact
+     </h3>
+     <p>
+      Email:
+      <a href="mailto:hbachtiarimadewi@gmail.com">
+       hbachtiarimadewi@gmail.com
+      </a>
+     </p>
+     <p>
+      Phone: +62 812 3456 7890
+     </p>
+     <p>
+      Location: Jakarta, Indonesia
+     </p>
+    </section>
+   </section>
+   <!-- Form Section -->
+   <footer class="form-section" id="contact">
+    <h2>
+     Get in Touch👋
+    </h2>
+    <form>
+     <input placeholder="Name" type="text"/>
+     <input placeholder="Email" type="email"/>
+     <input placeholder="Comment" type="tel"/>
+     <button type="submit">
+      Send
+     </button>
+    </form>
+   </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js">
+  </script>
+  <script>
+   function toggleMenu() {
+      const menu = document.getElementById("nav-menu");
+      menu.classList.toggle("show");
+    }
+    window.addEventListener("load", function () {
+      const loader = document.getElementById("loader-wrapper");
+      loader.style.opacity = "0";
+      loader.style.transition = "opacity 0.5s ease";
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 500);
+    });
+  </script>
+ </body>
 </html>
