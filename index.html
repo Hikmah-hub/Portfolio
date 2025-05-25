@@ -361,6 +361,35 @@
       transform: scale(1.05);
     }
 
+	    .hamburger {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  #nav-menu {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #111;
+    padding: 16px;
+    margin-top: 16px;
+  }
+
+  #nav-menu.show {
+    display: flex;
+  }
+}
+
+
     </style>
 </head>
 <body>
@@ -373,7 +402,19 @@
                 <a href="#about" class="hover:underline">About</a>
                 <a href="#project" class="hover:underline">Project</a>
                 <a href="#contact" class="hover:underline">Contact</a>
+		    <nav id="nav-menu" class="hidden md:flex space-x-4">
+  			<a href="#hero" class="hover:underline">Home</a>
+  			<a href="#about" class="hover:underline">About</a>
+			<a href="#project" class="hover:underline">Project</a>
+  			<a href="#contact" class="hover:underline">Contact</a>
+</nav>
+
             </nav>
+		<!-- Tambahkan ini di dalam .header -->
+		<button class="hamburger" onclick="toggleMenu()">
+ 		<i class="fas fa-bars"></i>
+		</button>
+
         </header>
 
         <!-- Hero Section -->
@@ -610,5 +651,12 @@
         </footer>
     </div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+	<script>
+ 	 function toggleMenu() {
+  	  const menu = document.getElementById("nav-menu");
+ 	   menu.classList.toggle("show");
+ 	 }
+</script>
+
 </body>
 </html>
