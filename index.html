@@ -289,9 +289,6 @@
   padding: 0 1rem;    /* Optional: horizontal padding inside container */
 }
 
-
-
-
 		.holes {
 		  display: flex;
 		  justify-content: space-between;
@@ -379,11 +376,10 @@
 			gap: 8px;
 			margin-top: 16px;
 		}
-    @media (max-width: 767px) {
-      .photo-grid, .ui-grid, .features {
-      grid-template-columns: 1fr;
-         }
-    }
+    @media (max-width: 768px) {
+        .features {
+            grid-template-columns: 1fr !important;
+        }
 	img {
       width: 100%;
       border-radius: 10px;
