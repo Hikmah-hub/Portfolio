@@ -1,4 +1,4 @@
-	<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,16 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
 
     <style>
+	    @media (max-width: 768px) {
+  .features {
+    grid-template-columns: 1fr !important;
+  }
+
+  .card.big {
+    grid-column: span 1 !important;
+  }
+}
+
         html {
           scroll-behavior: smooth;
         }
